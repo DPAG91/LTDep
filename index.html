@@ -3,214 +3,273 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Super App</title>
-<meta name="theme-color" content="#0f172a">
-<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIlN1cGVyIEFwcCIsICJzaG9ydF9uYW1lIjogIlN1cGVyIEFwcCIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGYxNzJhIiwgInRoZW1lX2NvbG9yIjogIiMwZjE3MmEiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBSExrbEVRVlI0bk8zZFBXNFVXUlRGOGRzV0Vuc2dJRWV6Z2hGT3pJVGV5aXlIVlV4T3lKQmdzUVRuUmhxSmtHd21ZZ0t3WFM1WFZkZkgrN2puM3Y4dkFndDNWOVU3NTcxWDFaWTVtVE92Mzd6OTBmc1lVTS9kN2MycDl6RU1kVDBZd2c2enZxVm8vc2FFSGt0YWw2SFpteEY4Yk5HcUNOWGZoT0RqaU5wRnFQYmlCQjhsMVNwQzhSY2wrS2lwZEJFdVNyNFk0VWR0cFROV3BFMEVIejJVV0EwT3J3Q0VINzJVeU42aEFoQis5SFkwZzdzTFFQamh4WkVzN2lvQTRZYzNlek81dVFDRUgxN3R5ZWFtQWhCK2VMYzFvNnNMUVBpaFlrdFdWeFdBOEVQTjJzeWVMUURoaDZvMTJTMzZveENBbXNVQ01QdEQzYmtNenhhQThDT0twU3l6QlVKcWt3Vmc5a2MwYzVsbUJVQnF6d3JBN0krb3ByTE5Db0RVbmhTQTJSL1JqVFBPQ29EVUhnckE3SThzaGxsbkJVQnFGQUNwWFppeC9VRSs5NWxuQlVCcUZBQ3BVUUNrUmdHUTJva2JZR1RHQ29EVVh2UStnT2crZi9wdzZQc3ZyNjRMSFFtbXNBVXE2R2pZMTZJVTVWQ0FBMW9GL2h3S3NSOEYyR2hQNlBjR3RPVjdaVVVCVmxvVHhsYmg4M1FzNmlqQUFvV2dLUnlqWnhSZ3dybFFlUTJVNm5IM1JBRkc1a0trRnA0bzUxRWJCZmdsYW1DaW5sY3A2UXZRT3lDdjNuKzBmLzc4by9yNzlENVByMUwvS01SVUtDNnZya09HWXU2OHZIeVcwVXZhQW93SFBtcnd4NmJPTTNNSjBtMkI1bWI5SGw2OS8vanc1eGJib0RGUDE2S1hWQ3NBQS80VVc2SkVCY2k2NVRrbis1WW9SUUdtd28rbnNwWWdmQUc4aG4rNC81LzZldzhaU3hDNkFGN0Q3MW0yRW9RdEFPSGZMMU1KUWhhQThCK1hwUVRoQ3FBUWZnLzcvVFV5bENCVUFSVEN2OFJqTWFLWElFd0IxTVB2V2VRU2hDbkFFT0V2TCtvMURWR0E0WXprZmFBOGJuUFdHbDdiS0t1QWZBR2lETVE5cFlKRXVQYlNCV0RmMzE2MCt3SHBBZ3dSL25ZaVhXdlpBaWp0Kys4cGJXL09pWEkvSUZzQW9BVEpBaWpPL2x1b3JCUVJWZ0c1QXFoZTZBd1V4MGF1QUVOS3M3L0tyTDZWMGhoTWtTcUE0Z3lUamRvWVNSVmdTSDNtT1VkcHhWQWVDOWtDQUNYSUZFRDV5WS9TYkw2WDZoTWhtUUlBTlVnVVFHbEdLVWw1NVZBWk00a0NES2x0ZnpKUkhCdTVBcWhSbnNVemNGOEFsYVVVenltTW5mc0NEQ2t1c2Rtb2paRlVBVEppQzFVWEJhaUk4UHJudWdES0gzNWxwdlNobU9zQ0FMVlJBQUZzcGVxaEFKVVFXZzBVQUttNUxZRDNteWVzNTNrc1gvUStnRFVpUGdINjh1N2xrNy8vL3ZkL25ZNmtqc3VyYTlmQnYrZDJCVkMydFAvLzh1N2xzL0F2ZlgzTmEySS9DdERRVXNDMy9CdVVRd0VhMlJKc1N0QU9CVUJxRktDd3FiMzZuaGw5Nm51NER5aVBBaUExaWNlZ1N2NzY3ZCtKcis3YjAwKzkxdVd1VjhJY1ZnQ2tSZ0VLbS9yUTd1dTM3NXRmWjgvM1lEc0tJQ1RpSitLOVVZQkd0c3pvelA3dFVJQ0cxZ1NiOExkRkFTcFkycXA4L2ZaOU11UnpYMGRkRW85QlAzLzZFRzcvdXpYc2F1ZXY4Sk9nWm81WEFMVUJ4enpQWSttMkFFQUxGS0FTejdNZUhsRUFBWlNwSGdxQTFGd1hRT2szak9HUjBtLzBjMTBBZGQ0SEh4UUF5VWtWSU9NMlNHMFZVUnNqOXdWUUN3QWVLWXlkK3dLb1V3aEJabklGVUZ0aU0xRWNHNGtDWkoxRmxjOWI1ZGdsQ2dEVUlsTUE1US9GVkdiREk1USsvQnFTS1FCUWcyd0IxRmFCclpSbVVlV3hrQ3FBVWlpeVVoc2pxUUtNS2MwOGFzRllTMmtNcHNnVklHcVFJbEFjRzdrQ21Hay9FWXBFOWNuUGtHUUJvbE1Oa3lMWkFpaXVBcEdDSFdIMk54TXV3SmhLQ1NLSWRLMmxDekNlZVNJTmpGZmphNnc4KzV1SkY4Qk1md0RHbE01SDZWam55QmZBVE90K1FEazBVZmI5UXlFS01PYTlCSXFpWHRNd0JlQitvSjVvKy82aE1BVXdvd1ExUkE2L1diQUNtR21VWUM1RTNzSVZQZnhtQVF0Z3BsRUM3ektFM3l4b0Fjd293UkZad204V3VBQm1sR0NQVE9FM0MxNEFNNzhsR0IrWGg2QmxDNzlaZ2dLWStTMkJKeG5EYjVha0FHYlRKYUFJMDljaFMvak5FaFhBYkhwZ001ZGc2dHd6aGQvTTdQVDZ6ZHNmdlEraUJ5K3pYcS8vQXRiTCtmZVdhZ1VZeXJvbHlyN2xHVXRiQUxQNUxWSEVJc3lkVitid215WGVBbzNOaFY0OUlGSFBxeFFLTUJJbE1GSE9vellLTU9IY0ZzaHJpRlNQdXljS3NHRE52VUR2VUNrY28yY1VZQ1ZQUWZOMExPb293RVo3bmhEdERXUEw5OHFLQWh6ZzVYRXBvZCtQQWhUVXFoQUV2aHdLVU5uUlVoRDJ1aWdBVWt2OW94REF4ZDN0emFuM1FRQTkzTjNlbkZnQmtCb0ZRR29VQUtsUkFLUjJZZmJ6WnFEM2dRQXQzV2VlRlFDcFVRQ2s5bEFBdGtISVlwaDFWZ0NrOXFRQXJBS0licHh4VmdDazlxd0FyQUtJYWlyYnJBQkliYklBckFLSVppN1RyQUJJYmJZQXJBS0lZaW5MaXlzQUpZQzZjeGxtQzRUVXpoYUFWUUNxMW1SMzFRcEFDYUJtYldaWGI0RW9BVlJzeWVxbWV3QktBTysyWm5UelRUQWxnRmQ3c3JucktSQWxnRGQ3TTduN01TZ2xnQmRIc25qb2N3QktnTjZPWnZEd0IyR1VBTDJVeUY3UjhQS2JwdEZDeVVtMzZJOUNzQnFndHRJWnF4WllWZ09VVkd0eXJUNWpVd1FjVVh0WDBXekxRaEd3UmF2dGRQTTlPMFhBa3RiM2tWMXZXaWtEelBvK1BISDMxSVpTeE9idFNlSC9URzc1WVZkRHFPa0FBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9wbmcifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFnQUFBQUlBQ0FZQUFBRDBlTlQ2QUFBVXdVbEVRVlI0bk8zZFBZNGsyWFVHME9qR0FEUmxDaURBOFFkYWdURGpVREs1RlM2SHE2QlBrNkpEUWt1Z1R3SUNaTW9qclpIUmt6MVozWmxaOGZOKzdydjNISXNnT1RXWkVaSHYrK0sreUtvUEd5RjkrOTMzUDg1K0RRQXQvTzJ2Zi9rdyt6WHdOU2RsRWdFUDhJbUNNSWVEUG9Dd0J6aEdLZWpQQWU1QTRBTzBwUkMwNTRBMklQQUJ4bElJcm5NQVR4TDZBREVvQStjNGFBY0lmWURZbElIOUhLaDNDSDJBTlNrRHJ6azRUd2grZ0J3VWdjY2NsRHRDSHlBM1plQm5Ec1FtK0FHcVVRU0tGd0RCRDFCYjVTSlE4bzBMZmdEdVZTd0NwZDZ3NEFmZ2xVcEZvTVFiRmZ3QUhGR2hDSHljL1FKNkUvNEFIRlVoTzlJMm5Bb25ENEQrc2s0RDByMHB3UTlBRDltS1FLb3RBT0VQUUMvWk1pWkZtOGwyVWdDSUxjTTBZUGtKZ1BBSFlMUU0yYk4wQWNod0FnQlkwK29adE9RSVkvV0REa0F1SzI0SkxEY0JFUDRBUkxOaU5pMVZBRlk4d0FEVXNGcEdMVEd5V08yZ0FsRGJDbHNDNFNjQXdoK0ExYXlRWGFFTHdBb0hFQUFlaVo1aFlRdEE5QU1IQU8rSm5HVWhDMERrQXdZQVIwVE50SEFGSU9xQkFvQ3pJbVpicUFJUThRQUJRQXZSTWk1TUFZaDJZQUNndFVoWkY2SUFSRG9nQU5CVGxNeWJYZ0NpSEFnQUdDVkM5azB0QUJFT0FBRE1NRHNEcHhXQTJXOGNBR2FibVlWVENvRHdCNEJQWm1YaThBSWcvQUhnclJuWk9MUUFDSDhBZUd4MFJnNHJBTUlmQUY0Ym1aVkRDb0R3QjRCOVJtWG05TjhEQUFDTTE3MEF1UHNIZ0dOR1pHZlhBaUQ4QWVDYzNobmFyUUFJZndDNHBtZVdlZ1lBQUFycVVnRGMvUU5BRzcweXRYa0JFUDRBMEZhUGJHMWFBSVEvQVBUUk9tTTlBd0FBQlRVckFPNytBYUN2bGxuYnBBQUlmd0FZbzFYbTJnSUFnSUl1RndCMy93QXdWb3ZzTlFFQWdJSXVGUUIzL3dBd3g5VU1QbDBBaEQ4QXpIVWxpMjBCQUVCQnB3cUF1MzhBaU9Gc0pwc0FBRUJCaHd1QXUzOEFpT1ZNTnBzQUFFQkJod3FBdTM4QWlPbG9ScHNBQUVCQnV3dUF1MzhBaU8xSVZwc0FBRUJCdXdxQXUzOEFXTVBlekRZQkFJQ0NGQUFBS09qZEFtRDhEd0JyMlpQZEpnQUFVTkRMQXVEdUh3RFc5RjZHbXdBQVFFRUtBQUFVOUxRQUdQOER3TnBlWmJrSkFBQVVwQUFBUUVFUEM0RHhQd0RrOEN6VFRRQUFvQ0FGQUFBSytxb0FHUDhEUUM2UHN0MEVBQUFLVWdBQW9DQUZBQUFLZWxNQTdQOERRRTVmWnJ3SkFBQVVwQUFBUUVFS0FBQVU5TGtBMlA4SGdOenVzOTRFQUFBS1VnQUFvQ0FGQUFBS1VnQUFvS0NQMitZQlFBQ280cGI1SmdBQVVKQUNBQUFGS1FBQVVKQUNBQUFGS1FBQVVKQUNBQUFGS1FBQVVOQUh2d01BOHZqem4vN1E5ZWYvOE92ZmRQMzV3RGdLQUN5aWQ3aTNvaVRBR2hRQUNHU1ZrRDlMT1lBNEZBQ1lKSHZZNzZVVXdCd0tBQXdpOFBkUkNHQU1CUUE2RWZodEtBVFFod0lBRFFuOXZwUUJhRWNCZ0l1RS9oektBRnlqQU1BSlFqOFdaUUNPVXdCZ0o2Ry9CbVVBOWxFQTRJWFZRcjkzK0RrZWtJY0NBQTlFRExwVndzeXhnelVvQVBDVEtNR1ZOYXdjWDRoRkFhQzhtY0ZVUFl3Y2U1aEhBYUNzR2VFamRGNXpUbUFjQllCeVJvZU1nRG5IZVlLK0ZBREtHQlVvZ3FRUDV3L2FVZ0JJYjBSd0NJMnhuRk80VGdFZ3JkNGhJU0JpY0o3aEhBV0FkSG9HZ2pDSXpibUgvUlFBMHJENGMrTmFnUGNwQUtUUWE4RzMySy9OZFFIUEtRQXNyY2NDYjNIUHliVUNieWtBTE1saTNzWXZmL2ZIN1g5Kys1K3pYOFpRcmgzNDVPUHNGd0JIdFY3QWYvajFieXpnaGZRNDMxSCt6Z0VjOGMzc0Z3Qjc5UWgrNnJxZC8xYlgxZTNudUs1WWhTMEFsdEF5L0MzUW4venlkMy84L0orcmJRTTg0aHFqR2hNQVFyTW9NMHJMaVlCcEFDdndEQUJodFFwL2Uvd2MwZko2OFd3QWtTa0FoTlF5L09FTUpZRHNQQU5BS0lKL2pQdjkveHZQQVR6bnVpUWpFd0RDYUxISUd2ZlRRNnZyeWpTQVNCUUFRbWdWL3RDVEVrQW12Z1hBVklLZjFiVDR0b0J2Q1JDQkNRRFRDUDg1SHUzL3YvcnZlY3cwZ05VcEFFeHhkZUd6MTA4RUxhNURKWUJaRkFDR2F4SCtFSWtTd0lvOEE4QXdncC9Ncmo0YjRMa0FSak1CWUFqaEg0TjkvdjVNQTFpRkFrQjN3bjhkQ2tJYlNnQXJVQURvNnNwQzVrRS9WbmIxK2xVQzZFMEJvSnVyNFE4WktBRkVwUURRaGZDSG55a0JST1NQQWRIYzJRVkw4UGQxWkgvZkh3YnF4K2VES0V3QWFNcmlCcStkdmRaTkFtaE5BYUFaNFEvN0tBRkVvQURRaFBDSFk1UUFabE1BdUV6NHgrZjcvVEVwQWN5a0FIQ0o4TTlKWVJoSENXQVdCWURUaEQrMG9RUXdnd0xBS2NJZjJsSUNHRTBCNEREaHZ4YmovSFVvQVl5a0FIQ0k4SzlEY1poRENXQVVCWURkaEQrTW9RUXdnZ0pBVjhJZnp2SFpvVGNGZ0YzTzNGbFl3T1l6eGwvYm1jK1FLUUI3S1FDOFMvalhwVURNcHdUUWl3TEFTOElmNWxNQzZFRUI0Q25oRDNFb0FiU21BTkNNOEkvRitENGZuekZhVWdCNDZPaWRnNFVKeGpqNldUTUY0QmtGZ0s4SWYrNlpKTVNqQk5DQ0FzQWJGZ3JJeVdlYkx5a0FYT0x1SCtidzJlTXFCWURQalA3ek1MYXZ3VllBVnlnQWJOc20vSGxOb1loTENlQXNCUUFMQWhUak04KzJLUUNjNE80Zll2R1o1QXdGb0Rpai8zeU02MnV5RmNCUkNrQmh3cDhqRkl2NGxBQ09VQUFBb0NBRm9DaDMvNUNUS1FCN0tRQUZDZis4ak9uWk5pV0FmUlFBQUNoSUFTakczVDlYbURDc3d4U0E5eWdBUENYOFlXMCt3N3lpQUJTaTRlZm03cHlyckJHMUtBQkZHUDFEVGJZQ2VFWUI0Q3ZDbjFkTUd0YmpNODBqQ2tBQkdqMXdoRFdqQmdXQU45d3BRRTQrMjN4SkFVaE9rNi9CV0o3V3JCMzVLUUI4NWc2QnZSU09OZm1NYzA4QlNPeElnN2N3UUExSFB1dW1BTGtwQUFCUWtBS1FsTHYvT296ak9jb1VnRzFUQUFDZ0pBVWdJWGYvakdEeXNEWlRBQlFBQUNoSUFVakczWDh0N3NLNXdoU2dOZ1VBQUFwU0FCSng5ODlvSmhEck13V29Td0VBZ0lJVWdDVGMvZGZqN3B0V1RBRnFVZ0FBb0NBRm9CaDMvOEFqMW9aNkZJQUVqT1NZeVZaRVBkYWNIQlFBV0pEUUJhNVNBQmJuNFQrZ0ZROEQxcUlBQUVCQkNrQVI3djdweVpaRUh0YUtPaFNBaFJuQkFUTlpnOWFtQUJTZzBlZmlicHZlckJrMUtBQUFVSkFDc0Npak42SXhtYWpKV3JRdUJTQTVvenpnREd0SGZnb0FMTVJkTnRDS0FyQWdJemNnRW12U21oU0F4SXp3Z0N1c0lia3BBRUF6dGloZ0hRckFZb3phNmhLdVJHWnRXbzhDa0pUUkhkQ0N0U1F2QlFBQUNsSUFGbUxFeGdwc1ZkUmxqVnFMQWdBTEVLcEFhd3BBUXZic2dKYXNLVGtwQUFCUWtBS3dDSHRyck1TV1JWM1dxblVvQU1rWTFRRTlXRnZ5VVFBZ09IZlRRQThLQUFBVXBBQXN3SjRhc0JKcjFob1VnRVRzMFJHSnJZdDhyREc1S0FBUW1CQUZlbEVBQUtBZ0JRQUFDbElBZ3ZNd0RTdXpoVkdYdFNzK0JTQUpEK2ZrSXp5SnlGcVRod0lBQUFVcEFBQlFrQUlBZEdVckEySlNBQ0Fnb1FuMHBnQUFRRUVLUUdCN3YwYmpxVnhncEwxcmpxOEN4cVlBQUVCQkNnQUVrM0gvUCtON2d0VjlNL3NGQU9QODkzLzg0dVgvL3UvLzljOUJyd1NZVFFHQTVONEwvV2YvWDJVQWNsTUFJS2tqd2YvcW4xY0VJQ2ZQQUVCQ1Y4Ty94OC95SEFERVlnSUFnVndOeVpiQi8ram5tZ1pBSGlZQWtFU3Y4Qi85N3dER1VBQ0M4a3VBT0dKa01Dc0JiSnRmQnBTQkFnQUFCU2tBRU1UWi9mOFpkK1JuLzUwZUJJUTRGQUJZMk14eHZLMEFXSnNDQUFBRktRQ3dxQWgzNEJGZUEzQ09BZ0FCVk5vYnIvUmVJVElGQUFBS1VnQmdRWkZHNzVGZUM3Q2ZBZ0FBQlNrQU1GbkZQZkdLN3htaVVRQUFvQ0IvRFJBbSsvMi8vZVBFUHhWcjMvM01lL2lodytzQTlqTUJBSUNDRkFBQUtFZ0JnTWtxL2tubml1OFpvbEVBWUVGLy85Ly9tLzBTUG92MFdvRDlGQUFBS0VnQkFJQ0NGQUFJNE15ZWVJVFIrNW5YWVA4ZllsQUFBS0FnQlFBV05uTUtFR0VDQVp5bkFNRGlaZ1N4OElmMUtRQVFSSVc5OFFydkVWYWhBQVMxZDZIODg1LyswUG1Wc0lLUmQrVHUvdG0yL1d1UDBoZVhBZ0JKakFobTRROTUrR3VBa01ndG9ILzFyLy9TNWVjQ2VaZ0FRQ0N0eHFVdEExdjRRMDRtQUpEVTFXbEE2K0MzRnd5eEtBQ1EzSDJRdjFjRzNPMURIUW9BRkNMZ2dSdlBBRUF3UnVYQUNBb0EwSjFTQS9Fb0FJSDVaVUJBUkg0SlVBNEtBQUFVcEFBQVFFRUtBQVNVYVhTYTZiMUFKZ29BQUJTa0FBQkFRUXBBRXI0SkFJeGdyY2xEQVFqTy9tbGR6ajByYy8zR3B3QUEzUWdCaUVzQkFJQ0NGQUFBS0VnQlNNVERPZmtZb1JPSk5TWVhCV0FCUW9BVnVXN3JjdTdYb0FBQVFFRUtBQUFVcEFBa1k0OHVIK05VSXJDMjVLTUFMRUlJc0JMWGExM08vVG9VQUFBb1NBRkl5S2dPYU1tYWtwTUNBQXN3VmdWYVV3QVdJZ1NBeUt4UmExRUFnS2FFQUt4QkFVaktuaDNRZ3JVa0x3VmdNZTZ1Z0lpc1RldFJBR0FSRmxpZ0pRVWdNYU03UmxOU2NyR0c1S1lBTE1naUMwUmlUVnFUQWdBQUJTa0F5Um5oNWVKT2kxR3NIZmtwQUlzU0JFVGptcXpKZVYrWEFnQUFCU2tBQlJqbEFVZFlNMnBRQUJabTlGYVQ4MDRVcnNXMUtRQkZhUFRBSHRhS09oUUE0REozZ3JBZUJXQnhSeFplelI1NDVjZ2FvZlN0VHdHQUJWbDhnYXNVZ0FTRUFUQ1NOU2NIQmFBWTJ3QzBKZ3h5c0RiVW93QUFRRUVLUUJJZUJxekhuVGV0ZVBpdkpnVUFBQXBTQUJJeEJXQTBkNFByYy9kZmx3SUFBQVVwQU1tWUF0VGlqb3dyM1AzWHBnQUFRRUVLUUVLbUFNQjczUDJqQUFDbkNBVlltd0tRbENrQThJeTdmN1pOQVlEbFdhQ0JNeFNBeEV3QmdDKzUrK2RHQWVBekpZQzlCTU9hZk1hNXB3QWtaNkVHenJCMjVLY0E4SVk3aERWWnJIbVB6elpmVWdBS0VBN0FFZGFNR2hRQXZ1Sk9nVmVFdzNwOHBubEVBU2ppNktKdHdZQWNqbjZXRmJ3NkZJQkNmTEJ6YzM2NXlqVlVpd0xBVTZZQXNEYWZZVjVSQUlxeEZRQTFHUDN6SGdVQTJFMUlRQjRLUUVHbUFIa0phTGJOM1QvN0tBQkZLUUdRay9Cbkx3VUFBQXBTQUFvekJlQUlkNHJ4dWZ2bkNBV2dPQ1VnSDR0NlRjS2ZveFFBRGxNQ0lCYWZTYzVRQUhBbkFNWDR6TE50Q2dBL3NSWEFLd0lqTHFOL3psSUErRXdKZ0xVSWY2NVFBTGhFQ1lqSlFwK2Z6eDVYS1FDOElUZ2dKNTl0dnFRQThCVmJBUkNiMFQ4dEtBQThwQVJ3SXp4aUVmNjBvZ0RRakJJUWk0VS9INTh4V2xJQWVPcE1nRmlnb0k4em55MGxrRmNVQUY1U0FtQSs0VThQQ2dEdlVnTHFFaUx6Q1g5NlVRRFlSUWxZa3lCWW0vQ25Kd1dBcnBRQU9NZG5oOTRVQUhZN2UyZGhJWU5qem41bTNQMXpoQUxBSVVwQUhjSmtEdUhQS0FvQWh5a0JheEVNNnhEK2pLUUFjSW9TQUcwSmYwWlRBRGhOQ1lBMmhEOHpLQUJjb2dUQU5jS2ZXUlFBTGxNQzRqdDZqb1RMR01LZm1SUUFtbEFDNEJqaHoyd0tBTTBvQWJDUDhDY0NCWUNtbEFCNFRmZ1R4WWR2di92K3g5a3Znbnl1QkxxRnJvKzk1OFR4NzhObmdtaE1BT2ppeW9KbEd0Q0hFSmxIK0JPUkFrQTNTZ0FJZitKU0FPanFhZ2xRQkZqVjFldFgrTk9iQWtCM1Z4Y3lKV0Fjb2RQRzFXdldlV0FFQllBaGxJQVlCRXQvd3A5VmZEUDdCVkRIYldFN3UwRGUvamtMSkJFSmZsWmpBc0J3cGdGa0kveFprUUxBRkMxS2dDTEFiQzJ1UStIUExBb0EwN1JZK0pTQTQ1NGRkMEYwVEl0cnp6Rm5KczhBTU5YVjV3THUvMW1MS1NNSWZySXdBU0FFMHdCV0lQekpSQUVnakZZbFFCR2d0VmJYbGZBbkVuOE1pSkJhaGJnRjk3bjdZK3c0UGVZNkpETVRBRUpxdFdDYUJuQ1c4Q2M3QllDd1dwWUFSWUM5V2w0dndwL0lmQXVBMEZwOFMrREd0d1Y0cFdWSmRJMnhBczhBc0l6V2QvRVc2VS9IdFBweGNGMVJsUWtBeTJnNURiai9PUmJzbWdRLzFYa0dnT1cwWG1nOUkxQkxqL010L0ZtUkxRQ1cxaU80TGVZNXVWYmdMUVdBRkhyZHdWdmcxK2E2Z09jVUFOTG9PY2EzNEsvRnRRRHZVd0JJeCtKZmwzTVAreWtBcE5YN3dUNkJFSVB6RE9jb0FLUTM0Z2wvSVRHV2N3clhLUUNVTWVxcmZvS2pEK2NQMmxJQUtHZjBkLzRGeWpuT0UvU2xBRkRXakYvK0kyUmVjMDVnSEFXQThtYitGc0RxNGVQWXd6d0tBUHdreXE4RHpocE1qaS9Fb2dEQUExSEM2dDRxd2VYWXdSb1VBSGdoWXBpOTBqdm9IQS9JUXdHQW5WWUx2NnFFUHV5akFNQUp5a0FzUWgrT1V3RGdJbVZnRHFFUDF5Z0EwSkF5MEpmUWgzWVVBT2hFR1doRDZFTWZDZ0FNb2hEc0kvQmhEQVVBSmxFSVBoSDRNSWNDQUlGa0x3WENIdUpRQUdBUnE1UURJUTlyVUFBZ2tkNGxRYmhESGgrMmJkdVVBQUNvNDI5Ly9jdUhqN05mQkFBd25nSUFBQVVwQUFCUWtBSUFBQVVwQUFCUWtBSUFBQVVwQUFCUTBNZHQrL1I5d05rdkJBRG83NWI1SmdBQVVKQUNBQUFGS1FBQVVKQUNBQUFGZlM0QUhnUUVnTnp1czk0RUFBQUtVZ0FBb0NBRkFBQUtlbE1BUEFjQUFEbDltZkVtQUFCUWtBSUFBQVVwQUFCUTBGY0Z3SE1BQUpETG8ydzNBUUNBZ2hRQUFDam9ZUUd3RFFBQU9UekxkQk1BQUNoSUFRQ0FncDRXQU5zQUFMQzJWMWx1QWdBQUJTa0FBRkRReXdKZ0d3QUExdlJlaHBzQUFFQkI3eFlBVXdBQVdNdWU3RFlCQUlDQ0ZBQUFLR2hYQWJBTkFBQnIySnZaSmdBQVVORHVBbUFLQUFDeEhjbHFFd0FBS09oUUFUQUZBSUNZam1hMENRQUFGSFM0QUpnQ0FFQXNaN0xaQkFBQUNqcFZBRXdCQUNDR3M1bHNBZ0FBQlowdUFLWUFBRERYbFN5K05BRlFBZ0JnanFzWmJBc0FBQXE2WEFCTUFRQmdyQmJaYXdJQUFBVTFLUUNtQUFBd1Jxdk1iVFlCVUFJQW9LK1dXV3NMQUFBS2Fsb0FUQUVBb0kvV0dkdDhBcUFFQUVCYlBiSzF5eGFBRWdBQWJmVEtWTThBQUVCQjNRcUFLUUFBWE5NelM3dE9BSlFBQURpbmQ0WjIzd0pRQWdEZ21CSFo2UmtBQUNob1NBRXdCUUNBZlVabDVyQUpnQklBQUsrTnpNcWhXd0JLQUFBOE5qb2poejhEb0FRQXdGc3pzbkhLUTRCS0FBQjhNaXNUcDMwTFFBa0FvTHFaV1RqMWE0QktBQUJWemM3QTZiOEhZUFlCQUlEUkltVGY5QUt3YlRFT0JBQ01FQ1h6UWhTQWJZdHpRQUNnbDBoWkY2WUFiRnVzQXdNQUxVWEx1RkFGWU52aUhTQUF1Q3BpdG9VckFOc1c4MEFCd0JsUk15MWtBZGkydUFjTUFQYUtuR1ZoQzhDMnhUNXdBUEJLOUF3TFhRQzJMZjRCQklBdnJaQmQ0Vi9ndlcrLysvN0gyYThCQUo1WklmaHZ3azhBN3ExMFlBR29aYldNV3FvQWJOdDZCeGlBL0ZiTXB1VmU4RDFiQWdETXRHTHczeXczQWJpMzhvRUhZRzJyWjlEU0JXRGIxajhCQUt3blEvWXMvd2J1MlJJQW9LY013WCt6L0FUZ1hxWVRBMEFzMlRJbTFadTVaeG9BUUF2Wmd2OG01WnU2cHdnQWNFYlc0TDlKdFFYd1NQWVRDRUI3RmJJai9SdThaeG9Bd0NzVmd2K216QnU5cHdnQWNLOVM4TitVZThQM0ZBR0EyaW9HLzAzWk4zNVBFUUNvcFhMdzM1US9BUGNVQVlEY0JQL1BISWdubEFHQUhJVCtZdzdLT3hRQmdEVUovdGNjbkFPVUFZRFloUDUrRHRSSnlnQkFERUwvSEFldEFXVUFZQ3loZjUwRDJJRkNBTkNXd0cvUEFSMUFJUUE0UnVEMzV3QlBvaFFBZkNMczUzRFFnMUlRZ0N3RWZFei9EMWtUbnRoNnNaVVFBQUFBQUVsRlRrU3VRbUNDIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFnQUFBQUlBQ0FZQUFBRDBlTlQ2QUFBVXdVbEVRVlI0bk8zZFBZNGsyWFVHME9qR0FEUmxDaURBOFFkYWdURGpVREs1RlM2SHE2QlBrNkpEUWt1Z1R3SUNaTW9qclpIUmt6MVozWmxaOGZOKzdydjNISXNnT1RXWkVaSHYrK0sreUtvUEd5RjkrOTMzUDg1K0RRQXQvTzJ2Zi9rdyt6WHdOU2RsRWdFUDhJbUNNSWVEUG9Dd0J6aEdLZWpQQWU1QTRBTzBwUkMwNTRBMklQQUJ4bElJcm5NQVR4TDZBREVvQStjNGFBY0lmWURZbElIOUhLaDNDSDJBTlNrRHJ6azRUd2grZ0J3VWdjY2NsRHRDSHlBM1plQm5Ec1FtK0FHcVVRU0tGd0RCRDFCYjVTSlE4bzBMZmdEdVZTd0NwZDZ3NEFmZ2xVcEZvTVFiRmZ3QUhGR2hDSHljL1FKNkUvNEFIRlVoTzlJMm5Bb25ENEQrc2s0RDByMHB3UTlBRDltS1FLb3RBT0VQUUMvWk1pWkZtOGwyVWdDSUxjTTBZUGtKZ1BBSFlMUU0yYk4wQWNod0FnQlkwK29adE9RSVkvV0REa0F1SzI0SkxEY0JFUDRBUkxOaU5pMVZBRlk4d0FEVXNGcEdMVEd5V08yZ0FsRGJDbHNDNFNjQXdoK0ExYXlRWGFFTHdBb0hFQUFlaVo1aFlRdEE5QU1IQU8rSm5HVWhDMERrQXdZQVIwVE50SEFGSU9xQkFvQ3pJbVpicUFJUThRQUJRQXZSTWk1TUFZaDJZQUNndFVoWkY2SUFSRG9nQU5CVGxNeWJYZ0NpSEFnQUdDVkM5azB0QUJFT0FBRE1NRHNEcHhXQTJXOGNBR2FibVlWVENvRHdCNEJQWm1YaThBSWcvQUhnclJuWk9MUUFDSDhBZUd4MFJnNHJBTUlmQUY0Ym1aVkRDb0R3QjRCOVJtWG05TjhEQUFDTTE3MEF1UHNIZ0dOR1pHZlhBaUQ4QWVDYzNobmFyUUFJZndDNHBtZVdlZ1lBQUFycVVnRGMvUU5BRzcweXRYa0JFUDRBMEZhUGJHMWFBSVEvQVBUUk9tTTlBd0FBQlRVckFPNytBYUN2bGxuYnBBQUlmd0FZbzFYbTJnSUFnSUl1RndCMy93QXdWb3ZzTlFFQWdJSXVGUUIzL3dBd3g5VU1QbDBBaEQ4QXpIVWxpMjBCQUVCQnB3cUF1MzhBaU9Gc0pwc0FBRUJCaHd1QXUzOEFpT1ZNTnBzQUFFQkJod3FBdTM4QWlPbG9ScHNBQUVCQnV3dUF1MzhBaU8xSVZwc0FBRUJCdXdxQXUzOEFXTVBlekRZQkFJQ0NGQUFBS09qZEFtRDhEd0JyMlpQZEpnQUFVTkRMQXVEdUh3RFc5RjZHbXdBQVFFRUtBQUFVOUxRQUdQOER3TnBlWmJrSkFBQVVwQUFBUUVFUEM0RHhQd0RrOEN6VFRRQUFvQ0FGQUFBSytxb0FHUDhEUUM2UHN0MEVBQUFLVWdBQW9DQUZBQUFLZWxNQTdQOERRRTVmWnJ3SkFBQVVwQUFBUUVFS0FBQVU5TGtBMlA4SGdOenVzOTRFQUFBS1VnQUFvQ0FGQUFBS1VnQUFvS0NQMitZQlFBQ280cGI1SmdBQVVKQUNBQUFGS1FBQVVKQUNBQUFGS1FBQVVKQUNBQUFGS1FBQVVOQUh2d01BOHZqem4vN1E5ZWYvOE92ZmRQMzV3RGdLQUN5aWQ3aTNvaVRBR2hRQUNHU1ZrRDlMT1lBNEZBQ1lKSHZZNzZVVXdCd0tBQXdpOFBkUkNHQU1CUUE2RWZodEtBVFFod0lBRFFuOXZwUUJhRWNCZ0l1RS9oektBRnlqQU1BSlFqOFdaUUNPVXdCZ0o2Ry9CbVVBOWxFQTRJWFZRcjkzK0RrZWtJY0NBQTlFRExwVndzeXhnelVvQVBDVEtNR1ZOYXdjWDRoRkFhQzhtY0ZVUFl3Y2U1aEhBYUNzR2VFamRGNXpUbUFjQllCeVJvZU1nRG5IZVlLK0ZBREtHQlVvZ3FRUDV3L2FVZ0JJYjBSd0NJMnhuRk80VGdFZ3JkNGhJU0JpY0o3aEhBV0FkSG9HZ2pDSXpibUgvUlFBMHJENGMrTmFnUGNwQUtUUWE4RzMySy9OZFFIUEtRQXNyY2NDYjNIUHliVUNieWtBTE1saTNzWXZmL2ZIN1g5Kys1K3pYOFpRcmgzNDVPUHNGd0JIdFY3QWYvajFieXpnaGZRNDMxSCt6Z0VjOGMzc0Z3Qjc5UWgrNnJxZC8xYlgxZTNudUs1WWhTMEFsdEF5L0MzUW4venlkMy84L0orcmJRTTg0aHFqR2hNQVFyTW9NMHJMaVlCcEFDdndEQUJodFFwL2Uvd2MwZko2OFd3QWtTa0FoTlF5L09FTUpZRHNQQU5BS0lKL2pQdjkveHZQQVR6bnVpUWpFd0RDYUxISUd2ZlRRNnZyeWpTQVNCUUFRbWdWL3RDVEVrQW12Z1hBVklLZjFiVDR0b0J2Q1JDQkNRRFRDUDg1SHUzL3YvcnZlY3cwZ05VcEFFeHhkZUd6MTA4RUxhNURKWUJaRkFDR2F4SCtFSWtTd0lvOEE4QXdncC9Ncmo0YjRMa0FSak1CWUFqaEg0TjkvdjVNQTFpRkFrQjN3bjhkQ2tJYlNnQXJVQURvNnNwQzVrRS9WbmIxK2xVQzZFMEJvSnVyNFE4WktBRkVwUURRaGZDSG55a0JST1NQQWRIYzJRVkw4UGQxWkgvZkh3YnF4K2VES0V3QWFNcmlCcStkdmRaTkFtaE5BYUFaNFEvN0tBRkVvQURRaFBDSFk1UUFabE1BdUV6NHgrZjcvVEVwQWN5a0FIQ0o4TTlKWVJoSENXQVdCWURUaEQrMG9RUXdnd0xBS2NJZjJsSUNHRTBCNEREaHZ4YmovSFVvQVl5a0FIQ0k4SzlEY1poRENXQVVCWURkaEQrTW9RUXdnZ0pBVjhJZnp2SFpvVGNGZ0YzTzNGbFl3T1l6eGwvYm1jK1FLUUI3S1FDOFMvalhwVURNcHdUUWl3TEFTOElmNWxNQzZFRUI0Q25oRDNFb0FiU21BTkNNOEkvRitENGZuekZhVWdCNDZPaWRnNFVKeGpqNldUTUY0QmtGZ0s4SWYrNlpKTVNqQk5DQ0FzQWJGZ3JJeVdlYkx5a0FYT0x1SCtidzJlTXFCWURQalA3ek1MYXZ3VllBVnlnQWJOc20vSGxOb1loTENlQXNCUUFMQWhUak04KzJLUUNjNE80Zll2R1o1QXdGb0Rpai8zeU02MnV5RmNCUkNrQmh3cDhqRkl2NGxBQ09VQUFBb0NBRm9DaDMvNUNUS1FCN0tRQUZDZis4ak9uWk5pV0FmUlFBQUNoSUFTakczVDlYbURDc3d4U0E5eWdBUENYOFlXMCt3N3lpQUJTaTRlZm03cHlyckJHMUtBQkZHUDFEVGJZQ2VFWUI0Q3ZDbjFkTUd0YmpNODBqQ2tBQkdqMXdoRFdqQmdXQU45d3BRRTQrMjN4SkFVaE9rNi9CV0o3V3JCMzVLUUI4NWc2QnZSU09OZm1NYzA4QlNPeElnN2N3UUExSFB1dW1BTGtwQUFCUWtBS1FsTHYvT296ak9jb1VnRzFUQUFDZ0pBVWdJWGYvakdEeXNEWlRBQlFBQUNoSUFVakczWDh0N3NLNXdoU2dOZ1VBQUFwU0FCSng5ODlvSmhEck13V29Td0VBZ0lJVWdDVGMvZGZqN3B0V1RBRnFVZ0FBb0NBRm9CaDMvOEFqMW9aNkZJQUVqT1NZeVZaRVBkYWNIQlFBV0pEUUJhNVNBQmJuNFQrZ0ZROEQxcUlBQUVCQkNrQVI3djdweVpaRUh0YUtPaFNBaFJuQkFUTlpnOWFtQUJTZzBlZmlicHZlckJrMUtBQUFVSkFDc0Npak42SXhtYWpKV3JRdUJTQTVvenpnREd0SGZnb0FMTVJkTnRDS0FyQWdJemNnRW12U21oU0F4SXp3Z0N1c0lia3BBRUF6dGloZ0hRckFZb3phNmhLdVJHWnRXbzhDa0pUUkhkQ0N0U1F2QlFBQUNsSUFGbUxFeGdwc1ZkUmxqVnFMQWdBTEVLcEFhd3BBUXZic2dKYXNLVGtwQUFCUWtBS3dDSHRyck1TV1JWM1dxblVvQU1rWTFRRTlXRnZ5VVFBZ09IZlRRQThLQUFBVXBBQXN3SjRhc0JKcjFob1VnRVRzMFJHSnJZdDhyREc1S0FBUW1CQUZlbEVBQUtBZ0JRQUFDbElBZ3ZNd0RTdXpoVkdYdFNzK0JTQUpEK2ZrSXp5SnlGcVRod0lBQUFVcEFBQlFrQUlBZEdVckEySlNBQ0Fnb1FuMHBnQUFRRUVLUUdCN3YwYmpxVnhncEwxcmpxOEN4cVlBQUVCQkNnQUVrM0gvUCtON2d0VjlNL3NGQU9QODkzLzg0dVgvL3UvLzljOUJyd1NZVFFHQTVONEwvV2YvWDJVQWNsTUFJS2tqd2YvcW4xY0VJQ2ZQQUVCQ1Y4Ty94OC95SEFERVlnSUFnVndOeVpiQi8ram5tZ1pBSGlZQWtFU3Y4Qi85N3dER1VBQ0M4a3VBT0dKa01Dc0JiSnRmQnBTQkFnQUFCU2tBRU1UWi9mOFpkK1JuLzUwZUJJUTRGQUJZMk14eHZLMEFXSnNDQUFBRktRQ3dxQWgzNEJGZUEzQ09BZ0FCVk5vYnIvUmVJVElGQUFBS1VnQmdRWkZHNzVGZUM3Q2ZBZ0FBQlNrQU1GbkZQZkdLN3htaVVRQUFvQ0IvRFJBbSsvMi8vZVBFUHhWcjMvM01lL2lodytzQTlqTUJBSUNDRkFBQUtFZ0JnTWtxL2tubml1OFpvbEVBWUVGLy85Ly9tLzBTUG92MFdvRDlGQUFBS0VnQkFJQ0NGQUFJNE15ZWVJVFIrNW5YWVA4ZllsQUFBS0FnQlFBV05uTUtFR0VDQVp5bkFNRGlaZ1N4OElmMUtRQVFSSVc5OFFydkVWYWhBQVMxZDZIODg1LyswUG1Wc0lLUmQrVHUvdG0yL1d1UDBoZVhBZ0JKakFobTRROTUrR3VBa01ndG9ILzFyLy9TNWVjQ2VaZ0FRQ0N0eHFVdEExdjRRMDRtQUpEVTFXbEE2K0MzRnd5eEtBQ1EzSDJRdjFjRzNPMURIUW9BRkNMZ2dSdlBBRUF3UnVYQUNBb0EwSjFTQS9Fb0FJSDVaVUJBUkg0SlVBNEtBQUFVcEFBQVFFRUtBQVNVYVhTYTZiMUFKZ29BQUJTa0FBQkFRUXBBRXI0SkFJeGdyY2xEQVFqTy9tbGR6ajByYy8zR3B3QUEzUWdCaUVzQkFJQ0NGQUFBS0VnQlNNVERPZmtZb1JPSk5TWVhCV0FCUW9BVnVXN3JjdTdYb0FBQVFFRUtBQUFVcEFBa1k0OHVIK05VSXJDMjVLTUFMRUlJc0JMWGExM08vVG9VQUFBb1NBRkl5S2dPYU1tYWtwTUNBQXN3VmdWYVV3QVdJZ1NBeUt4UmExRUFnS2FFQUt4QkFVaktuaDNRZ3JVa0x3VmdNZTZ1Z0lpc1RldFJBR0FSRmxpZ0pRVWdNYU03UmxOU2NyR0c1S1lBTE1naUMwUmlUVnFUQWdBQUJTa0F5Um5oNWVKT2kxR3NIZmtwQUlzU0JFVGptcXpKZVYrWEFnQUFCU2tBQlJqbEFVZFlNMnBRQUJabTlGYVQ4MDRVcnNXMUtRQkZhUFRBSHRhS09oUUE0REozZ3JBZUJXQnhSeFplelI1NDVjZ2FvZlN0VHdHQUJWbDhnYXNVZ0FTRUFUQ1NOU2NIQmFBWTJ3QzBKZ3h5c0RiVW93QUFRRUVLUUJJZUJxekhuVGV0ZVBpdkpnVUFBQXBTQUJJeEJXQTBkNFByYy9kZmx3SUFBQVVwQU1tWUF0VGlqb3dyM1AzWHBnQUFRRUVLUUVLbUFNQjczUDJqQUFDbkNBVlltd0tRbENrQThJeTdmN1pOQVlEbFdhQ0JNeFNBeEV3QmdDKzUrK2RHQWVBekpZQzlCTU9hZk1hNXB3QWtaNkVHenJCMjVLY0E4SVk3aERWWnJIbVB6elpmVWdBS0VBN0FFZGFNR2hRQXZ1Sk9nVmVFdzNwOHBubEVBU2ppNktKdHdZQWNqbjZXRmJ3NkZJQkNmTEJ6YzM2NXlqVlVpd0xBVTZZQXNEYWZZVjVSQUlxeEZRQTFHUDN6SGdVQTJFMUlRQjRLUUVHbUFIa0phTGJOM1QvN0tBQkZLUUdRay9Cbkx3VUFBQXBTQUFvekJlQUlkNHJ4dWZ2bkNBV2dPQ1VnSDR0NlRjS2ZveFFBRGxNQ0lCYWZTYzVRQUhBbkFNWDR6TE50Q2dBL3NSWEFLd0lqTHFOL3psSUErRXdKZ0xVSWY2NVFBTGhFQ1lqSlFwK2Z6eDVYS1FDOElUZ2dKNTl0dnFRQThCVmJBUkNiMFQ4dEtBQThwQVJ3SXp4aUVmNjBvZ0RRakJJUWk0VS9INTh4V2xJQWVPcE1nRmlnb0k4em55MGxrRmNVQUY1U0FtQSs0VThQQ2dEdlVnTHFFaUx6Q1g5NlVRRFlSUWxZa3lCWW0vQ25Kd1dBcnBRQU9NZG5oOTRVQUhZN2UyZGhJWU5qem41bTNQMXpoQUxBSVVwQUhjSmtEdUhQS0FvQWh5a0JheEVNNnhEK2pLUUFjSW9TQUcwSmYwWlRBRGhOQ1lBMmhEOHpLQUJjb2dUQU5jS2ZXUlFBTGxNQzRqdDZqb1RMR01LZm1SUUFtbEFDNEJqaHoyd0tBTTBvQWJDUDhDY0NCWUNtbEFCNFRmZ1R4WWR2di92K3g5a3Znbnl1QkxxRnJvKzk1OFR4NzhObmdtaE1BT2ppeW9KbEd0Q0hFSmxIK0JPUkFrQTNTZ0FJZitKU0FPanFhZ2xRQkZqVjFldFgrTk9iQWtCM1Z4Y3lKV0Fjb2RQRzFXdldlV0FFQllBaGxJQVlCRXQvd3A5VmZEUDdCVkRIYldFN3UwRGUvamtMSkJFSmZsWmpBc0J3cGdGa0kveFprUUxBRkMxS2dDTEFiQzJ1UStIUExBb0EwN1JZK0pTQTQ1NGRkMEYwVEl0cnp6Rm5KczhBTU5YVjV3THUvMW1MS1NNSWZySXdBU0FFMHdCV0lQekpSQUVnakZZbFFCR2d0VmJYbGZBbkVuOE1pSkJhaGJnRjk3bjdZK3c0UGVZNkpETVRBRUpxdFdDYUJuQ1c4Q2M3QllDd1dwWUFSWUM5V2w0dndwL0lmQXVBMEZwOFMrREd0d1Y0cFdWSmRJMnhBczhBc0l6V2QvRVc2VS9IdFBweGNGMVJsUWtBeTJnNURiai9PUmJzbWdRLzFYa0dnT1cwWG1nOUkxQkxqL010L0ZtUkxRQ1cxaU80TGVZNXVWYmdMUVdBRkhyZHdWdmcxK2E2Z09jVUFOTG9PY2EzNEsvRnRRRHZVd0JJeCtKZmwzTVAreWtBcE5YN3dUNkJFSVB6RE9jb0FLUTM0Z2wvSVRHV2N3clhLUUNVTWVxcmZvS2pEK2NQMmxJQUtHZjBkLzRGeWpuT0UvU2xBRkRXakYvK0kyUmVjMDVnSEFXQThtYitGc0RxNGVQWXd6d0tBUHdreXE4RHpocE1qaS9Fb2dEQUExSEM2dDRxd2VYWXdSb1VBSGdoWXBpOTBqdm9IQS9JUXdHQW5WWUx2NnFFUHV5akFNQUp5a0FzUWgrT1V3RGdJbVZnRHFFUDF5Z0EwSkF5MEpmUWgzWVVBT2hFR1doRDZFTWZDZ0FNb2hEc0kvQmhEQVVBSmxFSVBoSDRNSWNDQUlGa0x3WENIdUpRQUdBUnE1UURJUTlyVUFBZ2tkNGxRYmhESGgrMmJkdVVBQUNvNDI5Ly9jdUhqN05mQkFBd25nSUFBQVVwQUFCUWtBSUFBQVVwQUFCUWtBSUFBQVVwQUFCUTBNZHQrL1I5d05rdkJBRG83NWI1SmdBQVVKQUNBQUFGS1FBQVVKQUNBQUFGZlM0QUhnUUVnTnp1czk0RUFBQUtVZ0FBb0NBRkFBQUtlbE1BUEFjQUFEbDltZkVtQUFCUWtBSUFBQVVwQUFCUTBGY0Z3SE1BQUpETG8ydzNBUUNBZ2hRQUFDam9ZUUd3RFFBQU9UekxkQk1BQUNoSUFRQ0FncDRXQU5zQUFMQzJWMWx1QWdBQUJTa0FBRkRReXdKZ0d3QUExdlJlaHBzQUFFQkI3eFlBVXdBQVdNdWU3RFlCQUlDQ0ZBQUFLR2hYQWJBTkFBQnIySnZaSmdBQVVORHVBbUFLQUFDeEhjbHFFd0FBS09oUUFUQUZBSUNZam1hMENRQUFGSFM0QUpnQ0FFQXNaN0xaQkFBQUNqcFZBRXdCQUNDR3M1bHNBZ0FBQlowdUFLWUFBRERYbFN5K05BRlFBZ0JnanFzWmJBc0FBQXE2WEFCTUFRQmdyQmJaYXdJQUFBVTFLUUNtQUFBd1Jxdk1iVFlCVUFJQW9LK1dXV3NMQUFBS2Fsb0FUQUVBb0kvV0dkdDhBcUFFQUVCYlBiSzF5eGFBRWdBQWJmVEtWTThBQUVCQjNRcUFLUUFBWE5NelM3dE9BSlFBQURpbmQ0WjIzd0pRQWdEZ21CSFo2UmtBQUNob1NBRXdCUUNBZlVabDVyQUpnQklBQUsrTnpNcWhXd0JLQUFBOE5qb2poejhEb0FRQXdGc3pzbkhLUTRCS0FBQjhNaXNUcDMwTFFBa0FvTHFaV1RqMWE0QktBQUJWemM3QTZiOEhZUFlCQUlEUkltVGY5QUt3YlRFT0JBQ01FQ1h6UWhTQWJZdHpRQUNnbDBoWkY2WUFiRnVzQXdNQUxVWEx1RkFGWU52aUhTQUF1Q3BpdG9VckFOc1c4MEFCd0JsUk15MWtBZGkydUFjTUFQYUtuR1ZoQzhDMnhUNXdBUEJLOUF3TFhRQzJMZjRCQklBdnJaQmQ0Vi9ndlcrLysvN0gyYThCQUo1WklmaHZ3azhBN3ExMFlBR29aYldNV3FvQWJOdDZCeGlBL0ZiTXB1VmU4RDFiQWdETXRHTHczeXczQWJpMzhvRUhZRzJyWjlEU0JXRGIxajhCQUt3blEvWXMvd2J1MlJJQW9LY013WCt6L0FUZ1hxWVRBMEFzMlRJbTFadTVaeG9BUUF2Wmd2OG01WnU2cHdnQWNFYlc0TDlKdFFYd1NQWVRDRUI3RmJJai9SdThaeG9Bd0NzVmd2K216QnU5cHdnQWNLOVM4TitVZThQM0ZBR0EyaW9HLzAzWk4zNVBFUUNvcFhMdzM1US9BUGNVQVlEY0JQL1BISWdubEFHQUhJVCtZdzdLT3hRQmdEVUovdGNjbkFPVUFZRFloUDUrRHRSSnlnQkFERUwvSEFldEFXVUFZQ3loZjUwRDJJRkNBTkNXd0cvUEFSMUFJUUE0UnVEMzV3QlBvaFFBZkNMczUzRFFnMUlRZ0N3RWZFei9EMWtUbnRoNnNaVVFBQUFBQUVsRlRrU3VRbUNDIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJtYXNrYWJsZSJ9XX0=">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Super App">
-<meta name="mobile-web-app-capable" content="yes">
+<title>Departures — Hoxton, Whitechapel &amp; Hackney Road</title>
+<meta name="theme-color" content="#0a0d0c">
+<meta name="description" content="Live TfL departures for Hoxton Station, Whitechapel Station and the Hackney Road bus stop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Train+One&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f172a;
-    --panel: #1e293b;
-    --panel-border: #334155;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --accent: #38bdf8;
-    --green: #4ade80;
-    --amber: #fbbf24;
+    --paper: #eef1ef;
+    --panel: #ffffff;
+    --ink: #12181c;
+    --muted: #5b6a66;
+    --line: #d8dedb;
+    --shadow: 0 1px 2px rgba(18,24,28,0.04), 0 8px 24px rgba(18,24,28,0.05);
+
+    --c-district: #00782a;
+    --c-hc: #f589a6;
+    --c-hc-ink: #5c1b34;
+    --c-elizabeth: #6950a1;
+    --c-overground: #ee7c0e;
+    --c-bus: #dc241f;
   }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0a0d0c;
+      --panel: #121917;
+      --ink: #eef1ef;
+      --muted: #7c8f89;
+      --line: #223330;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0a0d0c;
+    --panel: #121917;
+    --ink: #eef1ef;
+    --muted: #7c8f89;
+    --line: #223330;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+  }
+
   * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    padding: env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 24px) 16px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    padding: env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 32px) 16px;
     min-height: 100vh;
+    transition: background 0.2s ease, color 0.2s ease;
   }
-  header {
+  a { color: inherit; }
+  .page { max-width: 600px; margin: 0 auto; }
+
+  .masthead {
+    padding: 28px 4px 22px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .eyebrow {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 20px 4px 8px 4px;
-  }
-  header img { width: 40px; height: 40px; border-radius: 10px; }
-  header h1 { font-size: 20px; margin: 0; }
-  header p { margin: 0; color: var(--muted); font-size: 13px; }
-  section { margin-top: 22px; }
-  section h2 {
-    font-size: 13px;
+    gap: 7px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    color: var(--c-overground);
+  }
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--c-overground);
+    box-shadow: 0 0 0 0 rgba(238,124,14,0.6);
+    animation: pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(238,124,14,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(238,124,14,0); }
+    100% { box-shadow: 0 0 0 0 rgba(238,124,14,0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot { animation: none; }
+  }
+  .page-title {
+    font-family: "Train One", "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.05;
+    margin: 2px 0 0 0;
+    text-wrap: balance;
+  }
+  .page-sub {
+    margin: 2px 0 0 0;
     color: var(--muted);
-    margin: 0 4px 10px 4px;
+    font-size: 14px;
   }
-  .card {
+
+  .boards { display: flex; flex-direction: column; gap: 12px; }
+
+  .board {
     background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
   }
-  .sub-row {
+  .board-head {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 18px 14px 18px;
+    border-bottom: 1px solid var(--line);
   }
-  .sub-name { font-size: 15px; font-weight: 600; }
-  .sub-cost { font-size: 15px; font-weight: 600; color: var(--accent); }
-  .sub-meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .board-name {
+    font-family: "Train One", "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    margin: 0;
+  }
+  .board-tag {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .board-body { padding: 6px 10px 10px 10px; }
+
+  .platform {
+    border-bottom: 1px solid var(--line);
+  }
+  .platform:last-child { border-bottom: none; }
+  .platform summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 8px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .platform summary::-webkit-details-marker { display: none; }
+  .platform summary:focus-visible { outline: 2px solid var(--c-overground); outline-offset: 2px; border-radius: 6px; }
+  .chevron {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+  }
+  .platform[open] .chevron { transform: rotate(90deg); }
+
+  .chips { display: flex; gap: 4px; flex-shrink: 0; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 2px 6px;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 1.5;
+  }
+  .chip.district { background: var(--c-district); }
+  .chip.hc { background: var(--c-hc); color: var(--c-hc-ink); }
+  .chip.elizabeth { background: var(--c-elizabeth); }
+  .chip.overground { background: var(--c-overground); }
+  .chip.bus { background: var(--c-bus); }
+
+  .platform-label {
+    font-size: 14px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .platform-next {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  .platform-rows { padding: 0 8px 12px 8px; display: flex; flex-direction: column; gap: 6px; }
+  .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-left: 25px;
+  }
+  .row-dest {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .row-line { color: var(--muted); font-size: 12px; margin-left: 6px; }
+  .row-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .row-time.due { color: var(--c-overground); font-weight: 700; }
+
+  .flat-rows { padding: 4px 8px 14px 8px; display: flex; flex-direction: column; gap: 8px; }
+  .flat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .flat-row .row-dest { font-size: 14px; }
+
   .empty {
     color: var(--muted);
     font-size: 14px;
-    line-height: 1.5;
+    padding: 14px 8px 18px 8px;
   }
-  a.cta {
-    display: block;
-    text-align: center;
-    background: var(--accent);
-    color: #0f172a;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 13px;
-    border-radius: 12px;
-    margin-top: 8px;
-  }
-  .brief-updated {
-    color: var(--muted);
-    font-size: 11px;
-    margin: 0 4px 10px 4px;
-  }
-  .brief-cat { margin-bottom: 14px; }
-  .brief-cat h3 {
-    font-size: 12px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0 4px 6px 4px;
-  }
-  .brief-item {
-    display: block;
-    background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-    text-decoration: none;
-    color: var(--text);
-  }
-  .brief-title { display: block; font-size: 14px; font-weight: 600; line-height: 1.3; }
-  .brief-meta { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; }
-  a.learn-card {
-    display: block;
-    background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: var(--text);
-  }
-  .learn-title { display: block; font-size: 15px; font-weight: 600; }
-  .learn-sub { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
-  a.link-card {
-    display: block;
-    background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 14px;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: var(--text);
-  }
-  .link-card .sub-name { color: var(--text); }
-  .link-card .sub-meta { color: var(--muted); }
-  .dep-stop {
-    margin-bottom: 10px;
-    background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 14px;
-    padding: 4px 12px;
-  }
-  .dep-stop-name {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-    padding: 10px 4px;
-  }
-  .dep-stop-name::-webkit-details-marker { display: none; }
-  .dep-stop-name::after {
-    content: "\25b8";
-    font-size: 12px;
-    color: var(--muted);
-    transition: transform 0.15s ease;
-  }
-  .dep-stop[open] > .dep-stop-name::after { transform: rotate(90deg); }
-  .dep-stop > .dep-list { padding-bottom: 10px; }
-  .dep-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-  }
-  .dep-line { font-size: 14px; font-weight: 600; }
-  .dep-dest { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
-  .dep-mins { font-size: 15px; font-weight: 700; color: var(--accent); white-space: nowrap; padding-left: 10px; }
-  .dep-platform-group { margin-top: 6px; }
-  .dep-platform-group:first-of-type { margin-top: 0; }
-  .dep-platform-group summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+
+  .foot {
+    margin-top: 26px;
     padding: 4px;
+    text-align: center;
   }
-  .dep-platform-group summary::-webkit-details-marker { display: none; }
-  .dep-platform-group summary::after {
-    content: "\25b8";
-    font-size: 10px;
+  .foot p {
+    margin: 0 0 4px 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
     color: var(--muted);
-    transition: transform 0.15s ease;
   }
-  .dep-platform-group[open] summary::after { transform: rotate(90deg); }
-  .dep-platform-body { margin-top: 4px; }
+  .foot-note { font-family: "IBM Plex Sans", sans-serif !important; font-size: 12px !important; }
+
   .search-form { display: flex; gap: 8px; }
   .search-input {
     flex: 1;
     min-width: 0;
-    font-family: inherit;
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     padding: 10px 12px;
     border-radius: 10px;
-    border: 1px solid var(--panel-border);
-    background: var(--bg);
-    color: var(--text);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
   }
-  .search-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .search-input:focus-visible { outline: 2px solid var(--c-overground); outline-offset: 1px; }
   .search-btn {
-    font-size: 13px;
-    font-weight: 600;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     padding: 0 16px;
     border-radius: 10px;
     border: none;
-    background: var(--accent);
-    color: #0f172a;
+    background: var(--ink);
+    color: var(--paper);
     cursor: pointer;
   }
   .search-btn:active { opacity: 0.85; }
@@ -224,14 +283,16 @@
     width: 100%;
     padding: 10px 12px;
     border-radius: 10px;
-    border: 1px solid var(--panel-border);
+    border: 1px solid var(--line);
     background: transparent;
-    color: var(--text);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     cursor: pointer;
   }
-  .search-result:hover, .search-result:focus-visible { border-color: var(--accent); outline: none; }
+  .search-result:hover, .search-result:focus-visible { border-color: var(--c-overground); outline: none; }
   .search-result-modes {
+    font-family: "IBM Plex Mono", monospace;
     font-size: 10px;
     color: var(--muted);
     text-transform: uppercase;
@@ -246,10 +307,11 @@
     gap: 10px;
     margin-top: 14px;
     padding-top: 12px;
-    border-top: 1px solid var(--panel-border);
+    border-top: 1px solid var(--line);
   }
-  .search-selected-name { font-size: 15px; font-weight: 600; margin: 0; }
+  .search-selected-name { font-family: "Train One", "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 16px; margin: 0; }
   .search-clear {
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -260,122 +322,76 @@
     padding: 4px 6px;
     flex-shrink: 0;
   }
-  .search-clear:hover { color: var(--amber); }
-  footer {
-    margin-top: 32px;
-    padding: 4px;
-    color: var(--muted);
-    font-size: 11px;
-    text-align: center;
-    line-height: 1.6;
-  }
+  .search-clear:hover { color: var(--c-bus); }
+  .chip.generic { background: var(--muted); }
 </style>
 </head>
 <body>
 
-<header>
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAGiElEQVR4nO3dvWrlVhSG4XXMQMqUgYFMP+QSxo2T0reSy5mrSJ9ySBOTS3DvQGDKdOkmhTlGlvWvLe31fft9IDAZsK0jvV5eOjLJJRL48PHTt9rHgP2eHh8utY+hygEQcBtqBH7aFyTitp0V96FfhIgx5Mi4D/nEhIwljgj7pvQnJGYsdUQrxb5DCBl7lJrWRSY0MWOvUg3t+q4gZBxhz7TePKGJGUfZ09amoIkZR9va2OqgiRln2dLaqqCJGWdb29zioIkZtaxpb1HQxIzaljY4GzQxI4slLRZ/9A3UNBk00xnZzDU5GjQxI6upNlk5YGUwaKYzshtr9E3QxAwVQ62ycsDKq6CZzlDTb5YJDSsEDSsvQbNuQFW3XSY0rBA0rNxEsG5A37VhJjSsEDSsEDSsXNif4YQJDSsEDSvvah+Akz//+H3zx97e3Rc8knaxQ2+0J96liHw9gl7ojIDnEPg8gp6wNuI9wZ35tZwR9IAlcZ0RVJbjUELQHXMB1Ywn87FlQtAxHUvGUNSO90xNBz0WhlIUDq+hpCaDrhHB+89f4p9ffzns8xP2s+aeFA5d+Nu7e/kLP/YaMrzdeKamgh6L2UnrUTexctQO+f3nLy9/PnLt6Kv9umuwn9AtXtSrFqe1ddD9i+ewK6819Jqdo7YNeijmlrUStWXQmWLu7s9D/36mFqK2CzpTzBm5R20VdPfitLgvL9U/N05R2wTdjxnzHKO2CDrrxai5L2+R9TyuIR+04s6cKXS3nVo6aMWYM3KKWjroLmLex+X8yQad/SYw01qxlMNNomTQqidbjeJ5lgvaZW/OOsHV92m5oLtUY85O+bxKBa0yLbJO361UznuEWNBdylNEger5lQk6+7saW2Sf5IrvesgEDSwhEbTjdFahNqUlglaSfY1wlz5opnN9SlM6fdDumOhlpQ46+zRoVebrkjroLoV1w3naKpz/CKGggSXSBp35x1ppipM96/VJG3SXyo87dwrXQSJoBYpT1hFBw0rKoHmYklf2hywpg24RK0sZBF0AMeZB0LBC0LCSLmi3G8K/fv7u1T8OMt8Ypgtazdj+PBbwVNjs4vsR9AGWTGKXaZ0NQRe2JlSiLo+gYYWgd+jvvFsmbv9j2KP3IWhYeVf7AJT99tN/vb/ZthP3P8/txuMBExpmCLqgv7/+e8rHYBxB73DEk0yHp6M1EXRhayYu07k8gj7AklCJ+Ri8y3GQa7A//vD94N/jGAS90+3d/eRvnK0JmP15v3QrR+ZfTcSzzL/imy5oYA+ChhWCLiDbj92WEXQSfFOUkTJobgzzynxDGJE0aGArgi4k47RqkUTQ7muHyjeDwnVIG7TKRW5V1uuTNmhgC5mgFX7cZZ1aJSic/4jkQTsHoizzdUkddAsyx6EofdA8ZKkv+8OUrvRBq8l+wd1JBM2UrkdpOkeIBO1KIRA1MkEzpc+nNp0jhILuyxy1ysWfkvn8TpEK2iEURUrnXSroPtUpkp3yeZULuj8tVE9+1qnXP59Zj3OMXNARGidZ4RjnKL4GyaAjeNfjCIrvavTJBt1H1Pu4nD/poFX36WzTT31v7pIOOiJ31AphOMUcYRB0hP5FyMLhPFoEHcFN4hYON4F9NkFHvI2asIf1z41LzBFmQUfk26n7x1M7Hreduc8u6Ih8UWfhHnOEadARRN3XQswRxkFHDEfdWthDr9k15gjzoCOGL97ZUV+P4eyQhl6nc8wRjfxPg64XsXuBr392vMAthnxlP6G7Mkzro7Ucc0TE5cPHT99qH8TZxiJWvvCOr2mLJoO+cojA4TWU1HTQV1NrR8Yw1I73TATdMbdP14wl87FlQtADltwonhFQluNQQtAT1r4DsieuM7+WM4JeKMPbe0Q8j6A3OiNwAl6PoAvaEznxlkHQsNLUo2/4u3l6fLjUPgighKfHhwsTGlYIGlYIGlZuIp53j9oHAuxxbZgJDSsEDSsvQbN2QFW3XSY0rBA0rLwKmrUDavrNMqFh5U3QTGmoGGp1cEITNbIba5SVA1ZGg2ZKI6upNicnNFEjm7kmWTlgZTZopjSyWNLioglN1KhtaYOLVw6iRi1r2lu1QxM1zra2udU3hUSNs2xpbdO7HESNo21tbPPbdkSNo+xpq0iU/OfEUEKJIVnkwQrTGnuVaqh4iExrrFF6GBZ/9M20xlJHtHJofExrDDly6J02TYm7bWf95K6yHhB3G2qsnyn2XQL3kOH+6X8R3rxIL6p85AAAAABJRU5ErkJggg==" alt="">
-  <div>
-    <h1>Super App</h1>
-    <p>Snapshot dashboard &middot; static v1</p>
-  </div>
-</header>
+<div class="page">
+  <header class="masthead">
+    <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Live &middot; TfL</div>
+    <h1 class="page-title">Departures</h1>
+    <p class="page-sub">Hoxton &middot; Whitechapel &middot; Hackney Road</p>
+  </header>
 
-<section>
-  <h2>Live Departures</h2>
-  <div id="departures">
-    <details class="dep-stop" data-stop-key="hoxton">
-      <summary class="dep-stop-name">Hoxton Station</summary>
-      <div class="dep-list"><p class="empty">Loading&hellip;</p></div>
-    </details>
-    <details class="dep-stop" data-stop-key="whitechapel">
-      <summary class="dep-stop-name">Whitechapel Station</summary>
-      <div class="dep-list"><p class="empty">Loading&hellip;</p></div>
-    </details>
-    <details class="dep-stop" data-stop-key="hackney-he">
-      <summary class="dep-stop-name">Hackney Road &middot; Stop HE</summary>
-      <div class="dep-list"><p class="empty">Loading&hellip;</p></div>
-    </details>
-  </div>
-  <p class="brief-updated" id="dep-updated"></p>
-</section>
+  <main class="boards" id="boards">
+    <section class="board" data-stop-key="hoxton">
+      <div class="board-head">
+        <h2 class="board-name">Hoxton Station</h2>
+        <span class="board-tag">Overground</span>
+      </div>
+      <div class="board-body" id="board-hoxton"><p class="empty">Loading live times&hellip;</p></div>
+    </section>
 
-<section>
-  <h2>Look Up a Station</h2>
-  <div class="card">
-    <form id="stop-search-form" class="search-form">
-      <input type="text" id="stop-search-input" class="search-input" placeholder="Station or stop name" autocomplete="off">
-      <button type="submit" class="search-btn">Search</button>
-    </form>
-    <div id="search-results"></div>
-    <div id="search-selected"></div>
-  </div>
-</section>
+    <section class="board" data-stop-key="whitechapel">
+      <div class="board-head">
+        <h2 class="board-name">Whitechapel Station</h2>
+        <span class="board-tag">Elizabeth &middot; Tube &middot; Overground</span>
+      </div>
+      <div class="board-body" id="board-whitechapel"><p class="empty">Loading live times&hellip;</p></div>
+    </section>
 
-<section>
-  <h2>Today's Briefing</h2>
-  <!--BRIEF_PLACEHOLDER-->
-</section>
+    <section class="board" data-stop-key="hackney-he">
+      <div class="board-head">
+        <h2 class="board-name">Hackney Road</h2>
+        <span class="board-tag">Bus &middot; Stop HE</span>
+      </div>
+      <div class="board-body" id="board-hackney-he"><p class="empty">Loading live times&hellip;</p></div>
+    </section>
 
-<section>
-  <h2>Daily Learning</h2>
-  <a class="learn-card" href="https://claude.ai/new?q=This%20is%20my%20daily%20AI-fundamentals%20lesson%20inside%20the%20Super%20App%20project.%20Please%20continue%20teaching%20me%20interactively%20about%20how%20AI%20models%20actually%20work%2C%20how%20they%27re%20built%20and%20trained%2C%20how%20they%20get%20deployed%20and%20used%20in%20the%20real%20world%2C%20and%20how%20people%20go%20about%20securing%20them%20-%20pick%20up%20from%20wherever%20we%20left%20off%20last%20time%2C%20or%20start%20from%20the%20basics%20if%20this%20is%20our%20first%20session.%20Keep%20it%20conversational%2C%20one%20topic%20at%20a%20time%2C%20and%20check%20my%20understanding%20as%20we%20go." target="_blank" rel="noopener">
-    <span class="learn-title">AI Fundamentals &rarr;</span>
-    <span class="learn-sub">Here's the next bit &mdash; let's go</span>
-  </a>
-  <a class="learn-card" href="https://claude.ai/new?q=This%20is%20my%20daily%20Spanish%20tutoring%20session%20inside%20the%20Super%20App%20project.%20Please%20act%20as%20my%20Spanish%20tutor%3A%20check%20where%20we%20left%20off%20%28or%20assess%20my%20current%20level%20if%20this%20is%20our%20first%20session%29%2C%20then%20run%20today%27s%20lesson%20conversationally%20-%20mixing%20explanation%2C%20practice%2C%20and%20correction%2C%20at%20a%20pace%20matched%20to%20me." target="_blank" rel="noopener">
-    <span class="learn-title">Spanish Tutor &rarr;</span>
-    <span class="learn-sub">Today's lesson &mdash; let's go</span>
-  </a>
-</section>
+    <section class="board">
+      <div class="board-head">
+        <h2 class="board-name">Look Up a Station</h2>
+        <span class="board-tag">Any TfL Stop</span>
+      </div>
+      <div class="board-body">
+        <form id="stop-search-form" class="search-form">
+          <input type="text" id="stop-search-input" class="search-input" placeholder="Station or stop name" autocomplete="off">
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+        <div id="search-results"></div>
+        <div id="search-selected"></div>
+      </div>
+    </section>
+  </main>
 
-<section>
-  <h2>Subscriptions</h2>
-  <a class="link-card" href="https://app.notion.com/p/3924422919074a80a9740d19f5b7d0df" target="_blank" rel="noopener">
-    <div class="sub-row"><span class="sub-name">View all subscriptions</span></div>
-    <div class="sub-meta">Kept off this screen day-to-day &mdash; renewal reminders now come as push notifications about a month out. Tap to open the full list in Notion.</div>
-  </a>
-</section>
-
-<section>
-  <h2>Tasks &amp; Contacts</h2>
-  <div class="card">
-    <p class="empty">Not shown here yet &mdash; these live in Notion for now. Open the full dashboard below to add or edit them.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Health</h2>
-  <div class="card">
-    <p class="empty">Not shown here yet &mdash; these live in Notion for now. Open the full dashboard below to add or edit them.</p>
-  </div>
-</section>
-
-<a class="cta" href="https://app.notion.com/p/3c1e84ef842481c991e7f7f909796eaf" target="_blank" rel="noopener">Open full dashboard in Notion</a>
-
-<footer>
-  Static snapshot &mdash; not yet live-synced.<br>
-  Built for David&#39;s Super App project.
-</footer>
+  <footer class="foot">
+    <p id="updated-at">Updating&hellip;</p>
+    <p class="foot-note">Live predictions from the TfL Unified API, refreshed automatically every 30 seconds.</p>
+  </footer>
+</div>
 
 <script>
 (function () {
   var TFL_APP_KEY = "2159cb8453164ec7a5f82ab121a7ce25";
   var REFRESH_MS = 30000;
 
-  // Whitechapel's combined "hub" StopPoint (HUBZWL) returns no arrivals of
-  // its own — confirmed live, it's always an empty array. TfL only attaches
-  // live predictions to the real underlying stations, so we query those two
-  // directly and merge the results: the Underground platforms (District +
-  // Hammersmith & City) and the shared Elizabeth line / Overground platforms.
-  //
-  // Sections are hardcoded rather than derived, in a fixed display order,
-  // because TfL's own inbound/outbound flag isn't reliably tied to true
-  // compass direction (confirmed live: Whitechapel's Windrush Platform 5
-  // reports BOTH inbound and outbound arrivals, even though both destinations
-  // — Highbury & Islington and Dalston Junction — sit at the same, northern
-  // end of the line, matching Hoxton's Platform 1/inbound). Mapping is keyed
-  // off platform identity instead, which is stable and matches physically:
+  // Sections are hardcoded, in a fixed order, keyed off physical platform —
+  // TfL's own inbound/outbound flag isn't reliably tied to true compass
+  // direction (Whitechapel's Windrush Platform 5 reports both inbound AND
+  // outbound arrivals, even though both destinations sit at the same,
+  // northern end of the line, matching Hoxton's Platform 1). Mapping:
   //   Hoxton      Platform 1 (inbound)  -> Highbury & Islington / Dalston Jn -> Northbound
   //   Hoxton      Platform 2 (outbound) -> West Croydon / New Cross / Crystal Palace -> Southbound
   //   Whitechapel Platform 5 (Windrush) -> same northern destinations as Hoxton Pl.1 -> Northbound
@@ -387,26 +403,26 @@
       key: "hoxton",
       ids: ["910GHOXTON"],
       sections: [
-        { header: "Southbound", match: function (a) { return a.platformName === "Platform 2"; } },
-        { header: "Northbound", match: function (a) { return a.platformName === "Platform 1"; } }
+        { header: "Southbound", chips: ["overground"], match: function (a) { return a.platformName === "Platform 2"; } },
+        { header: "Northbound", chips: ["overground"], match: function (a) { return a.platformName === "Platform 1"; } }
       ]
     },
     {
       key: "whitechapel",
       ids: ["940GZZLUWPL", "910GWCHAPEL"],
       sections: [
-        { header: "Elizabeth Line - Westbound", match: function (a) { return a.lineName === "Elizabeth line" && a.platformName === "B"; } },
-        { header: "Elizabeth Line - Eastbound", match: function (a) { return a.lineName === "Elizabeth line" && a.platformName === "A"; } },
-        { header: "D + H&C - Westbound", showLine: true, match: function (a) { return /^westbound/i.test(a.platformName || ""); } },
-        { header: "D + H&C - Eastbound", showLine: true, match: function (a) { return /^eastbound/i.test(a.platformName || ""); } },
-        { header: "Windrush - Northbound", match: function (a) { return a.lineName === "Windrush" && a.platformName === "Platform 5"; } },
-        { header: "Windrush - Southbound", match: function (a) { return a.lineName === "Windrush" && a.platformName === "Platform 6"; } }
+        { header: "Elizabeth Line - Westbound", chips: ["elizabeth"], match: function (a) { return a.lineName === "Elizabeth line" && a.platformName === "B"; } },
+        { header: "Elizabeth Line - Eastbound", chips: ["elizabeth"], match: function (a) { return a.lineName === "Elizabeth line" && a.platformName === "A"; } },
+        { header: "District + H&C - Westbound", chips: ["district", "hc"], showLine: true, match: function (a) { return /^westbound/i.test(a.platformName || ""); } },
+        { header: "District + H&C - Eastbound", chips: ["district", "hc"], showLine: true, match: function (a) { return /^eastbound/i.test(a.platformName || ""); } },
+        { header: "Windrush - Northbound", chips: ["overground"], match: function (a) { return a.lineName === "Windrush" && a.platformName === "Platform 5"; } },
+        { header: "Windrush - Southbound", chips: ["overground"], match: function (a) { return a.lineName === "Windrush" && a.platformName === "Platform 6"; } }
       ]
     },
     {
       key: "hackney-he",
       ids: ["490011325W"],
-      flat: true // just one physical stop, one direction — no platform nesting needed
+      flat: true
     }
   ];
 
@@ -417,66 +433,99 @@
       .replace(/>/g, "&gt;");
   }
 
+  function minsLabel(timeToStation) {
+    var mins = Math.round(timeToStation / 60);
+    return mins <= 0 ? "Due" : mins + " min";
+  }
+
+  function chipHtml(kind, text) {
+    var labels = { district: "D", hc: "H&C", elizabeth: "ELIZ", overground: "LO", bus: "BUS" };
+    var label = text != null ? text : (labels[kind] || "");
+    return '<span class="chip ' + kind + '">' + escapeHtml(label) + "</span>";
+  }
+
+  // Short chip text for a line we don't have a hardcoded color/label for —
+  // bus route codes are already compact, everything else gets its first word.
+  function shortLineTag(name) {
+    if (!name) return "";
+    if (/^[A-Za-z]?\d+[A-Za-z]?$/.test(name)) return name;
+    return name.replace(/\s*line$/i, "").split(" ")[0].slice(0, 3).toUpperCase();
+  }
+
   function renderRows(items, showLine) {
     var html = "";
     items.forEach(function (a) {
       var mins = Math.round(a.timeToStation / 60);
-      var minsLabel = mins <= 0 ? "Due" : mins + " min";
       var dest = a.destinationName || a.towards || "";
-      var subText = showLine ? a.lineName || "" : "";
+      var timeCls = mins <= 0 ? "row-time due" : "row-time";
       html +=
-        '<div class="dep-row">' +
-        "<div>" +
-        '<span class="dep-line">' + escapeHtml(dest || a.lineName) + "</span>" +
-        (subText ? '<span class="dep-dest">' + escapeHtml(subText) + "</span>" : "") +
-        "</div>" +
-        '<span class="dep-mins">' + escapeHtml(minsLabel) + "</span>" +
+        '<div class="row">' +
+        '<span class="row-dest">' + escapeHtml(dest || a.lineName) +
+        (showLine ? '<span class="row-line">' + escapeHtml(a.lineName || "") + "</span>" : "") +
+        "</span>" +
+        '<span class="' + timeCls + '">' + minsLabel(a.timeToStation) + "</span>" +
         "</div>";
     });
     return html;
   }
 
-  // A flat stop (just cfg.flat, e.g. the single Hackney Road bus stop) shows
-  // its arrivals directly under the station header, no platform nesting.
-  // A sectioned stop (Hoxton, Whitechapel) walks cfg.sections IN ORDER —
-  // that fixed order is the whole point, so the display never reshuffles
-  // itself as arrival times change — and renders one collapsible group per
-  // section that actually has arrivals right now, skipping empty ones.
-  function renderStop(stopEl, arrivals, cfg) {
-    var list = stopEl.querySelector(".dep-list");
+  function renderFlatRows(items) {
+    var html = "";
+    items.forEach(function (a) {
+      var dest = a.destinationName || a.towards || "";
+      var timeCls = Math.round(a.timeToStation / 60) <= 0 ? "row-time due" : "row-time";
+      html +=
+        '<div class="flat-row">' +
+        '<span class="chips">' + chipHtml("bus") + "</span>" +
+        '<span class="row-dest" style="flex:1">' + escapeHtml(a.lineName || "") + " &middot; " + escapeHtml(dest) + "</span>" +
+        '<span class="' + timeCls + '">' + minsLabel(a.timeToStation) + "</span>" +
+        "</div>";
+    });
+    return html;
+  }
+
+  function renderStop(bodyEl, arrivals, cfg) {
     if (!arrivals || arrivals.length === 0) {
-      list.innerHTML = '<p class="empty">No departures currently predicted.</p>';
+      bodyEl.innerHTML = '<p class="empty">No departures currently predicted.</p>';
       return;
     }
 
     if (cfg.flat) {
       var rows = arrivals.slice().sort(function (a, b) { return a.timeToStation - b.timeToStation; }).slice(0, 6);
-      list.innerHTML = renderRows(rows, true);
+      bodyEl.innerHTML = '<div class="flat-rows">' + renderFlatRows(rows) + "</div>";
       return;
     }
 
-    // Keep whatever the user already had expanded across the 30s auto-refresh
-    // instead of snapping every group shut again.
-    var openSections = {};
-    list.querySelectorAll("details.dep-platform-group[open]").forEach(function (d) {
-      var summary = d.querySelector("summary");
-      if (summary) openSections[summary.textContent] = true;
+    // Preserve whatever the viewer has manually collapsed across the 30s
+    // auto-refresh, rather than snapping every section back open.
+    var closedSections = {};
+    bodyEl.querySelectorAll("details.platform").forEach(function (d) {
+      if (!d.open) {
+        var label = d.querySelector(".platform-label");
+        if (label) closedSections[label.textContent] = true;
+      }
     });
 
     var html = "";
-    var anySection = false;
+    var any = false;
     (cfg.sections || []).forEach(function (section) {
       var items = arrivals.filter(section.match).sort(function (a, b) { return a.timeToStation - b.timeToStation; });
       if (!items.length) return;
-      anySection = true;
-      var openAttr = openSections[section.header] ? " open" : "";
+      any = true;
+      var openAttr = closedSections[section.header] ? "" : " open";
+      var chips = (section.chips || []).map(chipHtml).join("");
       html +=
-        '<details class="dep-platform-group"' + openAttr + ">" +
-        "<summary>" + escapeHtml(section.header) + "</summary>" +
-        '<div class="dep-platform-body">' + renderRows(items.slice(0, 4), !!section.showLine) + "</div>" +
+        '<details class="platform"' + openAttr + ">" +
+        "<summary>" +
+        '<span class="chevron">&#9656;</span>' +
+        '<span class="chips">' + chips + "</span>" +
+        '<span class="platform-label">' + escapeHtml(section.header) + "</span>" +
+        '<span class="platform-next">' + minsLabel(items[0].timeToStation) + "</span>" +
+        "</summary>" +
+        '<div class="platform-rows">' + renderRows(items.slice(0, 4), !!section.showLine) + "</div>" +
         "</details>";
     });
-    list.innerHTML = anySection ? html : '<p class="empty">No departures currently predicted.</p>';
+    bodyEl.innerHTML = any ? html : '<p class="empty">No departures currently predicted.</p>';
   }
 
   // For a station we haven't hardcoded, we don't know its platform layout —
@@ -501,22 +550,27 @@
       return sx - sy;
     });
 
-    // Same default-CLOSED convention as renderStop above — keep whatever the
-    // user already had expanded across the 30s auto-refresh.
-    var openSections = {};
-    bodyEl.querySelectorAll("details.dep-platform-group[open]").forEach(function (d) {
-      var summary = d.querySelector("summary");
-      if (summary) openSections[summary.textContent] = true;
+    var closedSections = {};
+    bodyEl.querySelectorAll("details.platform").forEach(function (d) {
+      if (!d.open) {
+        var label = d.querySelector(".platform-label");
+        if (label) closedSections[label.textContent] = true;
+      }
     });
 
     var html = "";
     order.forEach(function (lineName) {
       var items = byLine[lineName].slice().sort(function (a, b) { return a.timeToStation - b.timeToStation; });
-      var openAttr = openSections[lineName] ? " open" : "";
+      var openAttr = closedSections[lineName] ? "" : " open";
       html +=
-        '<details class="dep-platform-group"' + openAttr + ">" +
-        "<summary>" + escapeHtml(lineName) + "</summary>" +
-        '<div class="dep-platform-body">' + renderRows(items.slice(0, 4), false) + "</div>" +
+        '<details class="platform"' + openAttr + ">" +
+        "<summary>" +
+        '<span class="chevron">&#9656;</span>' +
+        '<span class="chips">' + chipHtml("generic", shortLineTag(lineName)) + "</span>" +
+        '<span class="platform-label">' + escapeHtml(lineName) + "</span>" +
+        '<span class="platform-next">' + minsLabel(items[0].timeToStation) + "</span>" +
+        "</summary>" +
+        '<div class="platform-rows">' + renderRows(items.slice(0, 4), false) + "</div>" +
         "</details>";
     });
     bodyEl.innerHTML = html;
@@ -546,7 +600,7 @@
 
   function refreshSearch() {
     if (!activeSearch) return;
-    var bodyEl = document.getElementById("search-board");
+    var bodyEl = document.getElementById("board-search");
     if (!bodyEl) return;
     var fetches = activeSearch.ids.map(function (sid) {
       return fetch("https://api.tfl.gov.uk/StopPoint/" + encodeURIComponent(sid) + "/Arrivals?app_key=" + TFL_APP_KEY)
@@ -576,7 +630,7 @@
       '<h3 class="search-selected-name">' + escapeHtml(label) + "</h3>" +
       '<button type="button" class="search-clear" id="search-clear-btn">Clear &times;</button>' +
       "</div>" +
-      '<div class="dep-list" id="search-board"><p class="empty">Loading&hellip;</p></div>';
+      '<div class="board-body" id="board-search" style="padding:6px 0 0 0;"><p class="empty">Loading live times&hellip;</p></div>';
 
     document.getElementById("search-clear-btn").addEventListener("click", function () {
       activeSearch = null;
@@ -637,11 +691,10 @@
     });
   }
 
-  // A "stop" on the dashboard can be backed by more than one real TfL
-  // StopPoint (Whitechapel needs its Tube platforms and its Elizabeth
-  // line/Overground platforms fetched separately, then merged) — fetch
-  // every id for this section and combine whatever comes back.
-  function loadStop(stopEl, cfg) {
+  // A "stop" can be backed by more than one real TfL StopPoint (Whitechapel
+  // needs its Tube platforms and its Elizabeth line/Overground platforms
+  // fetched separately, then merged) — fetch every id and combine results.
+  function loadStop(bodyEl, cfg) {
     var fetches = cfg.ids.map(function (id) {
       return fetch("https://api.tfl.gov.uk/StopPoint/" + encodeURIComponent(id) + "/Arrivals?app_key=" + TFL_APP_KEY)
         .then(function (res) {
@@ -655,28 +708,25 @@
     Promise.all(fetches).then(function (results) {
       var anyOk = results.some(function (r) { return r.ok; });
       if (!anyOk) {
-        var list = stopEl.querySelector(".dep-list");
-        list.innerHTML = '<p class="empty">Unable to load departures right now.</p>';
+        bodyEl.innerHTML = '<p class="empty">Unable to load departures right now.</p>';
         return;
       }
       var merged = [];
       results.forEach(function (r) { merged = merged.concat(r.data); });
-      renderStop(stopEl, merged, cfg);
+      renderStop(bodyEl, merged, cfg);
     });
   }
 
   function refreshAll() {
-    var container = document.getElementById("departures");
-    if (!container) return;
     STOPS.forEach(function (cfg) {
-      var el = container.querySelector('[data-stop-key="' + cfg.key + '"]');
-      if (el) loadStop(el, cfg);
+      var bodyEl = document.getElementById("board-" + cfg.key);
+      if (bodyEl) loadStop(bodyEl, cfg);
     });
     refreshSearch();
-    var updatedEl = document.getElementById("dep-updated");
+    var updatedEl = document.getElementById("updated-at");
     if (updatedEl) {
       updatedEl.textContent =
-        "Updated " + new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+        "Updated " + new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
     }
   }
 
