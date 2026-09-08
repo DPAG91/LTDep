@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Departures — Hoxton, Whitechapel &amp; Hackney Road</title>
+<meta name="theme-color" content="#0a0d0c">
+<meta name="description" content="Live TfL departures for Hoxton Station, Whitechapel Station and the Hackney Road bus stop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Train+One&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eef1ef;
+    --panel: #ffffff;
+    --ink: #12181c;
+    --muted: #5b6a66;
+    --line: #d8dedb;
+    --shadow: 0 1px 2px rgba(18,24,28,0.04), 0 8px 24px rgba(18,24,28,0.05);
+
+    --c-district: #00782a;
+    --c-hc: #f589a6;
+    --c-hc-ink: #5c1b34;
+    --c-elizabeth: #6950a1;
+    --c-overground: #ee7c0e;
+    --c-bus: #dc241f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0a0d0c;
+      --panel: #121917;
+      --ink: #eef1ef;
+      --muted: #7c8f89;
+      --line: #223330;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0a0d0c;
+    --panel: #121917;
+    --ink: #eef1ef;
+    --muted: #7c8f89;
+    --line: #223330;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    padding: env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 32px) 16px;
+    min-height: 100vh;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  a { color: inherit; }
+  .page { max-width: 600px; margin: 0 auto; }
+
+  .masthead {
+    padding: 28px 4px 22px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-overground);
+  }
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--c-overground);
+    box-shadow: 0 0 0 0 rgba(238,124,14,0.6);
+    animation: pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(238,124,14,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(238,124,14,0); }
+    100% { box-shadow: 0 0 0 0 rgba(238,124,14,0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot { animation: none; }
+  }
+  .page-title {
+    font-family: "Train One", "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.05;
+    margin: 2px 0 0 0;
+    text-wrap: balance;
+  }
+  .page-sub {
+    margin: 2px 0 0 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .boards { display: flex; flex-direction: column; gap: 12px; }
+
+  .board {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .board-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 18px 14px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .board-name {
+    font-family: "Train One", "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    margin: 0;
+  }
+  .board-tag {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .board-body { padding: 6px 10px 10px 10px; }
+
+  .platform {
+    border-bottom: 1px solid var(--line);
+  }
+  .platform:last-child { border-bottom: none; }
+  .platform summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 8px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .platform summary::-webkit-details-marker { display: none; }
+  .platform summary:focus-visible { outline: 2px solid var(--c-overground); outline-offset: 2px; border-radius: 6px; }
+  .chevron {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+  }
+  .platform[open] .chevron { transform: rotate(90deg); }
+
+  .chips { display: flex; gap: 4px; flex-shrink: 0; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 2px 6px;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 1.5;
+  }
+  .chip.district { background: var(--c-district); }
+  .chip.hc { background: var(--c-hc); color: var(--c-hc-ink); }
+  .chip.elizabeth { background: var(--c-elizabeth); }
+  .chip.overground { background: var(--c-overground); }
+  .chip.bus { background: var(--c-bus); }
+
+  .platform-label {
+    font-size: 14px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .platform-next {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  .platform-rows { padding: 0 8px 12px 8px; display: flex; flex-direction: column; gap: 6px; }
+  .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-left: 25px;
+  }
+  .row-dest {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .row-line { color: var(--muted); font-size: 12px; margin-left: 6px; }
+  .row-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .row-time.due { color: var(--c-overground); font-weight: 700; }
+
+  .flat-rows { padding: 4px 8px 14px 8px; display: flex; flex-direction: column; gap: 8px; }
+  .flat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .flat-row .row-dest { font-size: 14px; }
+
+  .empty {
+    color: var(--muted);
+    font-size: 14px;
+    padding: 14px 8px 18px 8px;
+  }
+
+  .foot {
+    margin-top: 26px;
+    padding: 4px;
+    text-align: center;
+  }
+  .foot p {
+    margin: 0 0 4px 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .foot-note { font-family: "IBM Plex Sans", sans-serif !important; font-size: 12px !important; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="masthead">
+    <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Live &middot; TfL</div>
+    <h1 class="page-title">Departures</h1>
+    <p class="page-sub">Hoxton &middot; Whitechapel &middot; Hackney Road</p>
+  </header>
+
+  <main class="boards" id="boards">
+    <section class="board" data-stop-key="hoxton">
+      <div class="board-head">
+        <h2 class="board-name">Hoxton Station</h2>
+        <span class="board-tag">Overground</span>
+      </div>
+      <div class="board-body" id="board-hoxton"><p class="empty">Loading live times&hellip;</p></div>
+    </section>
+
+    <section class="board" data-stop-key="whitechapel">
+      <div class="board-head">
+        <h2 class="board-name">Whitechapel Station</h2>
+        <span class="board-tag">Elizabeth &middot; Tube &middot; Overground</span>
+      </div>
+      <div class="board-body" id="board-whitechapel"><p class="empty">Loading live times&hellip;</p></div>
+    </section>
+
+    <section class="board" data-stop-key="hackney-he">
+      <div class="board-head">
+        <h2 class="board-name">Hackney Road</h2>
+        <span class="board-tag">Bus &middot; Stop HE</span>
+      </div>
+      <div class="board-body" id="board-hackney-he"><p class="empty">Loading live times&hellip;</p></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p id="updated-at">Updating&hellip;</p>
+    <p class="foot-note">Live predictions from the TfL Unified API, refreshed automatically every 30 seconds.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var TFL_APP_KEY = "2159cb8453164ec7a5f82ab121a7ce25";
+  var REFRESH_MS = 30000;
+
+  // Sections are hardcoded, in a fixed order, keyed off physical platform —
+  // TfL's own inbound/outbound flag isn't reliably tied to true compass
+  // direction (Whitechapel's Windrush Platform 5 reports both inbound AND
+  // outbound arrivals, even though both destinations sit at the same,
+  // northern end of the line, matching Hoxton's Platform 1). Mapping:
+  //   Hoxton      Platform 1 (inbound)  -> Highbury & Islington / Dalston Jn -> Northbound
+  //   Hoxton      Platform 2 (outbound) -> West Croydon / New Cross / Crystal Palace -> Southbound
+  //   Whitechapel Platform 5 (Windrush) -> same northern destinations as Hoxton Pl.1 -> Northbound
+  //   Whitechapel Platform 6 (Windrush) -> same southern destinations as Hoxton Pl.2 -> Southbound
+  //   Whitechapel Platform A (Elizabeth line) -> Abbey Wood / Shenfield -> Eastbound
+  //   Whitechapel Platform B (Elizabeth line) -> Paddington / Heathrow / Maidenhead / Reading -> Westbound
+  var STOPS = [
+    {
+      key: "hoxton",
+      ids: ["910GHOXTON"],
+      sections: [
+        { header: "Southbound", chips: ["overground"], match: function (a) { return a.platformName === "Platform 2"; } },
+        { header: "Northbound", chips: ["overground"], match: function (a) { return a.platformName === "Platform 1"; } }
+      ]
+    },
+    {
+      key: "whitechapel",
+      ids: ["940GZZLUWPL", "910GWCHAPEL"],
+      sections: [
+        { header: "Elizabeth Line - Westbound", chips: ["elizabeth"], match: function (a) { return a.lineName === "Elizabeth line" && a.platformName === "B"; } },
+        { header: "Elizabeth Line - Eastbound", chips: ["elizabeth"], match: function (a) { return a.lineName === "Elizabeth line" && a.platformName === "A"; } },
+        { header: "District + H&C - Westbound", chips: ["district", "hc"], showLine: true, match: function (a) { return /^westbound/i.test(a.platformName || ""); } },
+        { header: "District + H&C - Eastbound", chips: ["district", "hc"], showLine: true, match: function (a) { return /^eastbound/i.test(a.platformName || ""); } },
+        { header: "Windrush - Northbound", chips: ["overground"], match: function (a) { return a.lineName === "Windrush" && a.platformName === "Platform 5"; } },
+        { header: "Windrush - Southbound", chips: ["overground"], match: function (a) { return a.lineName === "Windrush" && a.platformName === "Platform 6"; } }
+      ]
+    },
+    {
+      key: "hackney-he",
+      ids: ["490011325W"],
+      flat: true
+    }
+  ];
+
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function minsLabel(timeToStation) {
+    var mins = Math.round(timeToStation / 60);
+    return mins <= 0 ? "Due" : mins + " min";
+  }
+
+  function chipHtml(kind) {
+    var labels = { district: "D", hc: "H&C", elizabeth: "ELIZ", overground: "LO", bus: "BUS" };
+    return '<span class="chip ' + kind + '">' + (labels[kind] || "") + "</span>";
+  }
+
+  function renderRows(items, showLine) {
+    var html = "";
+    items.forEach(function (a) {
+      var mins = Math.round(a.timeToStation / 60);
+      var dest = a.destinationName || a.towards || "";
+      var timeCls = mins <= 0 ? "row-time due" : "row-time";
+      html +=
+        '<div class="row">' +
+        '<span class="row-dest">' + escapeHtml(dest || a.lineName) +
+        (showLine ? '<span class="row-line">' + escapeHtml(a.lineName || "") + "</span>" : "") +
+        "</span>" +
+        '<span class="' + timeCls + '">' + minsLabel(a.timeToStation) + "</span>" +
+        "</div>";
+    });
+    return html;
+  }
+
+  function renderFlatRows(items) {
+    var html = "";
+    items.forEach(function (a) {
+      var dest = a.destinationName || a.towards || "";
+      var timeCls = Math.round(a.timeToStation / 60) <= 0 ? "row-time due" : "row-time";
+      html +=
+        '<div class="flat-row">' +
+        '<span class="chips">' + chipHtml("bus") + "</span>" +
+        '<span class="row-dest" style="flex:1">' + escapeHtml(a.lineName || "") + " &middot; " + escapeHtml(dest) + "</span>" +
+        '<span class="' + timeCls + '">' + minsLabel(a.timeToStation) + "</span>" +
+        "</div>";
+    });
+    return html;
+  }
+
+  function renderStop(bodyEl, arrivals, cfg) {
+    if (!arrivals || arrivals.length === 0) {
+      bodyEl.innerHTML = '<p class="empty">No departures currently predicted.</p>';
+      return;
+    }
+
+    if (cfg.flat) {
+      var rows = arrivals.slice().sort(function (a, b) { return a.timeToStation - b.timeToStation; }).slice(0, 6);
+      bodyEl.innerHTML = '<div class="flat-rows">' + renderFlatRows(rows) + "</div>";
+      return;
+    }
+
+    // Preserve whatever the viewer has manually collapsed across the 30s
+    // auto-refresh, rather than snapping every section back open.
+    var closedSections = {};
+    bodyEl.querySelectorAll("details.platform").forEach(function (d) {
+      if (!d.open) {
+        var label = d.querySelector(".platform-label");
+        if (label) closedSections[label.textContent] = true;
+      }
+    });
+
+    var html = "";
+    var any = false;
+    (cfg.sections || []).forEach(function (section) {
+      var items = arrivals.filter(section.match).sort(function (a, b) { return a.timeToStation - b.timeToStation; });
+      if (!items.length) return;
+      any = true;
+      var openAttr = closedSections[section.header] ? "" : " open";
+      var chips = (section.chips || []).map(chipHtml).join("");
+      html +=
+        '<details class="platform"' + openAttr + ">" +
+        "<summary>" +
+        '<span class="chevron">&#9656;</span>' +
+        '<span class="chips">' + chips + "</span>" +
+        '<span class="platform-label">' + escapeHtml(section.header) + "</span>" +
+        '<span class="platform-next">' + minsLabel(items[0].timeToStation) + "</span>" +
+        "</summary>" +
+        '<div class="platform-rows">' + renderRows(items.slice(0, 4), !!section.showLine) + "</div>" +
+        "</details>";
+    });
+    bodyEl.innerHTML = any ? html : '<p class="empty">No departures currently predicted.</p>';
+  }
+
+  // A "stop" can be backed by more than one real TfL StopPoint (Whitechapel
+  // needs its Tube platforms and its Elizabeth line/Overground platforms
+  // fetched separately, then merged) — fetch every id and combine results.
+  function loadStop(bodyEl, cfg) {
+    var fetches = cfg.ids.map(function (id) {
+      return fetch("https://api.tfl.gov.uk/StopPoint/" + encodeURIComponent(id) + "/Arrivals?app_key=" + TFL_APP_KEY)
+        .then(function (res) {
+          if (!res.ok) throw new Error("bad response");
+          return res.json();
+        })
+        .then(function (data) { return { ok: true, data: data }; })
+        .catch(function () { return { ok: false, data: [] }; });
+    });
+
+    Promise.all(fetches).then(function (results) {
+      var anyOk = results.some(function (r) { return r.ok; });
+      if (!anyOk) {
+        bodyEl.innerHTML = '<p class="empty">Unable to load departures right now.</p>';
+        return;
+      }
+      var merged = [];
+      results.forEach(function (r) { merged = merged.concat(r.data); });
+      renderStop(bodyEl, merged, cfg);
+    });
+  }
+
+  function refreshAll() {
+    STOPS.forEach(function (cfg) {
+      var bodyEl = document.getElementById("board-" + cfg.key);
+      if (bodyEl) loadStop(bodyEl, cfg);
+    });
+    var updatedEl = document.getElementById("updated-at");
+    if (updatedEl) {
+      updatedEl.textContent =
+        "Updated " + new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    }
+  }
+
+  refreshAll();
+  setInterval(refreshAll, REFRESH_MS);
+})();
+</script>
+
+</body>
+</html>
