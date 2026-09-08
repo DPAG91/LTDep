@@ -496,14 +496,13 @@
       return;
     }
 
-    // Preserve whatever the viewer has manually collapsed across the 30s
-    // auto-refresh, rather than snapping every section back open.
-    var closedSections = {};
-    bodyEl.querySelectorAll("details.platform").forEach(function (d) {
-      if (!d.open) {
-        var label = d.querySelector(".platform-label");
-        if (label) closedSections[label.textContent] = true;
-      }
+    // Preserve whatever the viewer has manually expanded across the 30s
+    // auto-refresh, rather than snapping every section shut again. Starts
+    // collapsed by default (nothing has been opened yet on first render).
+    var openSections = {};
+    bodyEl.querySelectorAll("details.platform[open]").forEach(function (d) {
+      var label = d.querySelector(".platform-label");
+      if (label) openSections[label.textContent] = true;
     });
 
     var html = "";
@@ -512,7 +511,7 @@
       var items = arrivals.filter(section.match).sort(function (a, b) { return a.timeToStation - b.timeToStation; });
       if (!items.length) return;
       any = true;
-      var openAttr = closedSections[section.header] ? "" : " open";
+      var openAttr = openSections[section.header] ? " open" : "";
       var chips = (section.chips || []).map(chipHtml).join("");
       html +=
         '<details class="platform"' + openAttr + ">" +
@@ -550,18 +549,16 @@
       return sx - sy;
     });
 
-    var closedSections = {};
-    bodyEl.querySelectorAll("details.platform").forEach(function (d) {
-      if (!d.open) {
-        var label = d.querySelector(".platform-label");
-        if (label) closedSections[label.textContent] = true;
-      }
+    var openSections = {};
+    bodyEl.querySelectorAll("details.platform[open]").forEach(function (d) {
+      var label = d.querySelector(".platform-label");
+      if (label) openSections[label.textContent] = true;
     });
 
     var html = "";
     order.forEach(function (lineName) {
       var items = byLine[lineName].slice().sort(function (a, b) { return a.timeToStation - b.timeToStation; });
-      var openAttr = closedSections[lineName] ? "" : " open";
+      var openAttr = openSections[lineName] ? " open" : "";
       html +=
         '<details class="platform"' + openAttr + ">" +
         "<summary>" +
