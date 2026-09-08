@@ -1,0 +1,7 @@
+name = "live-departures-board"
+compatibility_date = "2026-08-19"
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
